@@ -2,174 +2,165 @@
   "name": "Buying Signal Radar v1.0",
   "nodes": [
     {
-      "id": "faabd6c5",
-      "name": "Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -300,
-        -1300
-      ],
       "parameters": {
         "content": "# 🎯 BUYING SIGNAL RADAR v1.0\n\n**AI-powered intent detection across 6 data sources.** Finds people who are ready to buy RIGHT NOW, scores them by intent, and auto-reaches out before your competitors even know they exist.\n\n• 6 Signal Branches → Intent Scoring Engine → AI Research → Personalized Outreach → Telegram Alert\n\n`Built by @ayushopchauhan` │ `Free to use & customize` │ `github.com/ayushopchauhan/buying-signal-radar`",
         "height": 240,
         "width": 3700,
         "color": 5
-      }
-    },
-    {
-      "id": "5283e89c",
-      "name": "Note1",
+      },
+      "id": "faabd6c5",
+      "name": "Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        -1020
-      ],
+        -304,
+        -1296
+      ]
+    },
+    {
       "parameters": {
         "content": "## 📡 Branch 1: Reddit Intent Monitor\n\nScans Reddit for posts where people are **actively asking** for your service. These are the warmest leads possible.\n\n`Signal Strength: 9/10` │ `Source: Reddit JSON API (free)`",
         "height": 340,
         "width": 1180,
         "color": 2
-      }
-    },
-    {
-      "id": "4e5999d0",
-      "name": "Note2",
+      },
+      "id": "5283e89c",
+      "name": "Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        -500
-      ],
+        448,
+        -1024
+      ]
+    },
+    {
       "parameters": {
         "content": "## ⭐ Branch 2: Competitor Review Monitor\n\nWatches competitors' Google Reviews. A 1-2 star review = an unhappy customer actively looking for an alternative. **Your warmest prospect.**\n\n`Signal Strength: 8/10` │ `Source: Google Places API`",
         "height": 340,
         "width": 1180,
         "color": 3
-      }
-    },
-    {
-      "id": "e2194062",
-      "name": "Note3",
+      },
+      "id": "4e5999d0",
+      "name": "Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        20
-      ],
+        448,
+        -496
+      ]
+    },
+    {
       "parameters": {
         "content": "## 💼 Branch 3: Hiring Signal Detector\n\nCompanies posting jobs in your service area = budget allocated RIGHT NOW. Hiring a Marketing Manager? They need marketing services.\n\n`Signal Strength: 7/10` │ `Source: Google Jobs Search`",
         "height": 340,
         "width": 1180,
         "color": 6
-      }
-    },
-    {
-      "id": "a45797a7",
-      "name": "Note4",
+      },
+      "id": "e2194062",
+      "name": "Note3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        540
-      ],
+        448,
+        32
+      ]
+    },
+    {
       "parameters": {
         "content": "## 🔄 Branch 4: Website Change Detector\n\nMonitors prospect websites for changes. A redesign or new content = they're investing in their web presence. **Perfect timing to reach out.**\n\n`Signal Strength: 5/10` │ `Source: HTTP Hash Comparison`",
         "height": 340,
         "width": 1180,
         "color": 4
-      }
+      },
+      "id": "a45797a7",
+      "name": "Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        448,
+        528
+      ]
     },
     {
+      "parameters": {
+        "content": "## 📰 Branch 5: Funding & News Monitor\n\nTracks when companies raise funding, launch products, or expand. **Money coming in = money going out** on services like yours.\n\n`Signal Strength: 7/10` │ `Source: Google News RSS (free)`",
+        "height": 340,
+        "width": 1180
+      },
       "id": "5b8ee191",
       "name": "Note5",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        1060
-      ],
-      "parameters": {
-        "content": "## 📰 Branch 5: Funding & News Monitor\n\nTracks when companies raise funding, launch products, or expand. **Money coming in = money going out** on services like yours.\n\n`Signal Strength: 7/10` │ `Source: Google News RSS (free)`",
-        "height": 340,
-        "width": 1180,
-        "color": 1
-      }
+        448,
+        1040
+      ]
     },
     {
-      "id": "9781f6ea",
-      "name": "Note6",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        440,
-        1580
-      ],
       "parameters": {
         "content": "## 🐦 Branch 6: Social Listening\n\nMonitors social platforms for buying intent: complaints about providers, questions about solutions, or expressions of need.\n\n`Signal Strength: 6/10` │ `Source: Social Search API`",
         "height": 340,
         "width": 1180,
         "color": 5
-      }
-    },
-    {
-      "id": "4aa4da60",
-      "name": "Note7",
+      },
+      "id": "9781f6ea",
+      "name": "Note6",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1660,
-        -200
-      ],
+        448,
+        1568
+      ]
+    },
+    {
       "parameters": {
         "content": "## 🧠 INTENT SCORING ENGINE\n\nAll 6 signal branches feed directly into the scoring engine.\n\nLeads above threshold get auto-researched and contacted.\n\n**Scoring weights:**\n• Reddit Intent = 9\n• Bad Review = 8\n• Hiring Signal = 7\n• Funding/News = 7\n• Social Intent = 6\n• Website Change = 5\n\n`Threshold: 5.0 (configurable)`",
         "height": 560,
         "width": 460,
         "color": 2
-      }
-    },
-    {
-      "id": "011f50ba",
-      "name": "Note8",
+      },
+      "id": "4aa4da60",
+      "name": "Note7",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2260,
-        -200
-      ],
+        1664,
+        -208
+      ]
+    },
+    {
       "parameters": {
         "content": "## 🚀 AI-POWERED OUTREACH\n\nOfficial OpenAI, Telegram, and Google Sheets nodes.\n\n**For every high-intent lead:**\n\n1️⃣ AI researches their company + context (OpenAI node)\n2️⃣ AI writes hyper-personalized email using the SPECIFIC signal (OpenAI node)\n3️⃣ Telegram alert with full context (Telegram node)\n4️⃣ Everything logged to Google Sheets (Sheets node)\n\n`The email references WHY you're reaching out - because you saw a real signal, not because they're on a list.`",
         "height": 560,
         "width": 900,
         "color": 4
-      }
-    },
-    {
-      "id": "3f23f889",
-      "name": "Note9",
+      },
+      "id": "011f50ba",
+      "name": "Note8",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -220,
-        -200
-      ],
+        2272,
+        -208
+      ]
+    },
+    {
       "parameters": {
         "content": "## ⏰ TRIGGER & CONFIG\n\nRuns every 6 hours.\n\nEdit the **Configuration** node to set your:\n• Industry keywords\n• Competitor names\n• Target job titles\n• Prospect URLs to monitor\n• Telegram chat ID\n• Google Places API key\n\nAPI keys for OpenAI, Telegram, and Google Sheets are configured via **n8n credentials** (not in the config node).",
         "height": 440,
         "width": 520,
         "color": 7
-      }
+      },
+      "id": "3f23f889",
+      "name": "Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -208
+      ]
     },
     {
-      "id": "f7070748",
-      "name": "Run Every 6 Hours",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        -100,
-        660
-      ],
       "parameters": {
         "rule": {
           "interval": [
@@ -179,71 +170,158 @@
             }
           ]
         }
-      }
+      },
+      "id": "f7070748",
+      "name": "Run Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -96,
+        672
+      ]
     },
     {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "industry",
+              "value": "web design",
+              "type": "string"
+            },
+            {
+              "id": "a2",
+              "name": "service_keywords",
+              "value": "={{ [\"web design\", \"website redesign\", \"WordPress\", \"Shopify\", \"UI/UX\", \"web development\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a3",
+              "name": "search_queries_reddit",
+              "value": "={{ [\"need a web designer\", \"looking for website developer\", \"who builds websites\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a4",
+              "name": "social_keywords",
+              "value": "={{ [\"hate my website\", \"website is terrible\", \"need new website\", \"website redesign help\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a5",
+              "name": "competitor_place_ids",
+              "value": "={{ [\"ChIJ_REPLACE_WITH_REAL_PLACE_ID\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a6",
+              "name": "google_places_api_key",
+              "value": "YOUR_GOOGLE_PLACES_API_KEY",
+              "type": "string"
+            },
+            {
+              "id": "a7",
+              "name": "competitor_names",
+              "value": "={{ [\"Competitor Agency 1\", \"Competitor Agency 2\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a8",
+              "name": "job_keywords",
+              "value": "={{ [\"web designer\", \"frontend developer\", \"WordPress developer\", \"UI/UX designer\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a9",
+              "name": "prospect_urls",
+              "value": "={{ [\"https://example-prospect.com\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a10",
+              "name": "news_keywords",
+              "value": "={{ [\"web design agency funding\", \"digital agency acquisition\", \"website startup\"] }}",
+              "type": "array"
+            },
+            {
+              "id": "a11",
+              "name": "score_threshold",
+              "value": "5",
+              "type": "number"
+            },
+            {
+              "id": "a12",
+              "name": "telegram_chat_id",
+              "value": "YOUR_TELEGRAM_CHAT_ID",
+              "type": "string"
+            },
+            {
+              "id": "a13",
+              "name": "calendar_link",
+              "value": "https://cal.com/your-link/15min",
+              "type": "string"
+            },
+            {
+              "id": "a14",
+              "name": "from_name",
+              "value": "Your Name",
+              "type": "string"
+            },
+            {
+              "id": "a15",
+              "name": "from_email",
+              "value": "your@email.com",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "include": "none",
+        "options": {}
+      },
       "id": "c1214eb0",
       "name": "Configuration",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        200,
-        660
-      ],
-      "parameters": {
-        "mode": "raw",
-        "jsonOutput": "{\n  \"industry\": \"web design\",\n  \"service_keywords\": [\n    \"web design\",\n    \"web development\",\n    \"website redesign\",\n    \"WordPress\",\n    \"Shopify\",\n    \"UI/UX\"\n  ],\n  \"search_queries_reddit\": [\n    \"looking for web designer\",\n    \"need a new website\",\n    \"recommend web developer\",\n    \"website redesign help\",\n    \"need help with my website\"\n  ],\n  \"competitor_place_ids\": [\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_1\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_2\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_3\"\n  ],\n  \"competitor_names\": [\n    \"Competitor Agency 1\",\n    \"Competitor Agency 2\"\n  ],\n  \"job_keywords\": [\n    \"Marketing Manager\",\n    \"Web Developer\",\n    \"Digital Marketing\",\n    \"E-commerce Manager\",\n    \"Brand Manager\"\n  ],\n  \"prospect_urls\": [\n    \"https://example-prospect-1.com\",\n    \"https://example-prospect-2.com\",\n    \"https://example-prospect-3.com\"\n  ],\n  \"news_keywords\": [\n    \"web design agency funding\",\n    \"digital agency acquisition\",\n    \"ecommerce growth\"\n  ],\n  \"social_keywords\": [\n    \"hate my website\",\n    \"website is slow\",\n    \"need new website\",\n    \"web designer recommendations\"\n  ],\n  \"score_threshold\": 5,\n  \"from_name\": \"Your Name\",\n  \"from_email\": \"you@yourdomain.com\",\n  \"calendar_link\": \"https://cal.com/you/15min\",\n  \"google_places_api_key\": \"REPLACE_WITH_YOUR_GOOGLE_API_KEY\",\n  \"telegram_chat_id\": \"REPLACE_WITH_YOUR_CHAT_ID\"\n}",
-        "options": {}
-      }
+        208,
+        672
+      ]
     },
     {
+      "parameters": {
+        "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.search_queries_reddit[0] + \" OR \" + $json.search_queries_reddit[1] + \" OR \" + $json.search_queries_reddit[2]) }}&sort=new&limit=25&t=day",
+        "options": {
+          "timeout": 15000
+        }
+      },
       "id": "89bf928e",
       "name": "Reddit Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         560,
-        -900
+        -896
       ],
-      "parameters": {
-        "method": "GET",
-        "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.search_queries_reddit[0] + \" OR \" + $json.search_queries_reddit[1] + \" OR \" + $json.search_queries_reddit[2]) }}&sort=new&limit=25&t=day",
-        "options": {
-          "timeout": 15000
-        },
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "value": "BuyingSignalRadar/1.0"
-            }
-          ]
-        }
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Parse Reddit search results into structured lead signals\nconst data = $input.first().json;\nconst posts = data?.data?.children || [];\nconst config = $('Configuration').first().json;\n\nconst signals = [];\nconst now = Math.floor(Date.now() / 1000);\nconst oneDayAgo = now - 86400;\n\nfor (const post of posts) {\n  const p = post.data;\n\n  // Skip old posts\n  if (p.created_utc < oneDayAgo) continue;\n\n  // Skip posts from bots or removed content\n  if (p.author === '[deleted]' || p.author === 'AutoModerator') continue;\n  if (p.removed_by_category) continue;\n\n  // Calculate relevance score based on keyword matches\n  const text = (p.title + ' ' + (p.selftext || '')).toLowerCase();\n  const keywords = config.service_keywords || [];\n  const matchCount = keywords.filter(kw => text.includes(kw.toLowerCase())).length;\n\n  if (matchCount === 0) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'reddit_intent',\n      signal_strength: 9,\n      source: 'Reddit',\n\n      // Lead info\n      lead_name: p.author,\n      lead_url: 'https://reddit.com/user/' + p.author,\n      company_name: null,\n      company_url: null,\n\n      // Signal context\n      title: p.title,\n      body: (p.selftext || '').substring(0, 500),\n      post_url: 'https://reddit.com' + p.permalink,\n      subreddit: p.subreddit,\n      upvotes: p.ups,\n      comments: p.num_comments,\n      posted_at: new Date(p.created_utc * 1000).toISOString(),\n\n      // Scoring inputs\n      keyword_matches: matchCount,\n      has_budget_mention: /budget|price|cost|pay|afford|invest/i.test(text),\n      is_urgent: /asap|urgent|quickly|fast|deadline|rush/i.test(text),\n\n      // For email personalization\n      signal_summary: 'Posted on r/' + p.subreddit + ': \"' + p.title.substring(0, 100) + '\"',\n      reach_out_reason: 'They are actively looking for ' + config.industry + ' help on Reddit'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'reddit_intent', no_results: true } }];"
+      },
       "id": "25373b77",
       "name": "Parse Reddit Results",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        860,
-        -900
-      ],
-      "parameters": {
-        "jsCode": "// Parse Reddit search results into structured lead signals\nconst data = $input.first().json;\nconst posts = data?.data?.children || [];\nconst config = $('Configuration').first().json;\n\nconst signals = [];\nconst now = Math.floor(Date.now() / 1000);\nconst oneDayAgo = now - 86400;\n\nfor (const post of posts) {\n  const p = post.data;\n\n  // Skip old posts\n  if (p.created_utc < oneDayAgo) continue;\n\n  // Skip posts from bots or removed content\n  if (p.author === '[deleted]' || p.author === 'AutoModerator') continue;\n  if (p.removed_by_category) continue;\n\n  // Calculate relevance score based on keyword matches\n  const text = (p.title + ' ' + (p.selftext || '')).toLowerCase();\n  const keywords = config.service_keywords || [];\n  const matchCount = keywords.filter(kw => text.includes(kw.toLowerCase())).length;\n\n  if (matchCount === 0) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'reddit_intent',\n      signal_strength: 9,\n      source: 'Reddit',\n\n      // Lead info\n      lead_name: p.author,\n      lead_url: 'https://reddit.com/user/' + p.author,\n      company_name: null,\n      company_url: null,\n\n      // Signal context\n      title: p.title,\n      body: (p.selftext || '').substring(0, 500),\n      post_url: 'https://reddit.com' + p.permalink,\n      subreddit: p.subreddit,\n      upvotes: p.ups,\n      comments: p.num_comments,\n      posted_at: new Date(p.created_utc * 1000).toISOString(),\n\n      // Scoring inputs\n      keyword_matches: matchCount,\n      has_budget_mention: /budget|price|cost|pay|afford|invest/i.test(text),\n      is_urgent: /asap|urgent|quickly|fast|deadline|rush/i.test(text),\n\n      // For email personalization\n      signal_summary: 'Posted on r/' + p.subreddit + ': \"' + p.title.substring(0, 100) + '\"',\n      reach_out_reason: 'They are actively looking for ' + config.industry + ' help on Reddit'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'reddit_intent', no_results: true } }];"
-      }
+        864,
+        -896
+      ]
     },
     {
-      "id": "db3928cb",
-      "name": "Filter Reddit Signals",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        1160,
-        -900
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -266,48 +344,47 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "db3928cb",
+      "name": "Filter Reddit Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        -896
+      ]
     },
     {
+      "parameters": {
+        "url": "=https://maps.googleapis.com/maps/api/place/details/json?place_id={{ $json.competitor_place_ids[0] }}&fields=reviews,name,url&key={{ $json.google_places_api_key }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
       "id": "52faf629",
       "name": "Fetch Competitor Reviews",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         560,
-        -380
+        -352
       ],
-      "parameters": {
-        "method": "GET",
-        "url": "=https://maps.googleapis.com/maps/api/place/details/json?place_id={{ $json.competitor_place_ids[0] }}&fields=reviews,name,url&key={{ $json.google_places_api_key }}",
-        "options": {
-          "timeout": 15000
-        }
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Extract 1-2 star reviews from competitors - these are your prospects\nconst data = $input.first().json;\nconst result = data?.result || {};\nconst reviews = result.reviews || [];\nconst competitorName = result.name || 'Unknown Competitor';\n\nconst signals = [];\nconst oneWeekAgo = Date.now() - (7 * 86400 * 1000);\n\nfor (const review of reviews) {\n  // Only interested in unhappy customers (1-2 stars)\n  if (review.rating > 2) continue;\n\n  // Only recent reviews\n  const reviewDate = new Date(review.time * 1000);\n  if (reviewDate.getTime() < oneWeekAgo) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'bad_competitor_review',\n      signal_strength: 8,\n      source: 'Google Reviews',\n\n      // Lead info\n      lead_name: review.author_name,\n      lead_url: review.author_url || null,\n      company_name: null,\n      company_url: null,\n\n      // Signal context\n      competitor_name: competitorName,\n      review_rating: review.rating,\n      review_text: review.text,\n      review_date: reviewDate.toISOString(),\n\n      // For email personalization\n      signal_summary: review.rating + '-star review of ' + competitorName + ': \"' + (review.text || '').substring(0, 100) + '\"',\n      reach_out_reason: 'They left a negative review on your competitor (' + competitorName + ') and may be looking for a better alternative'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'bad_competitor_review', no_results: true } }];"
+      },
       "id": "3ff0b743",
       "name": "Parse Bad Reviews",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        860,
-        -380
-      ],
-      "parameters": {
-        "jsCode": "// Extract 1-2 star reviews from competitors - these are your prospects\nconst data = $input.first().json;\nconst result = data?.result || {};\nconst reviews = result.reviews || [];\nconst competitorName = result.name || 'Unknown Competitor';\n\nconst signals = [];\nconst oneWeekAgo = Date.now() - (7 * 86400 * 1000);\n\nfor (const review of reviews) {\n  // Only interested in unhappy customers (1-2 stars)\n  if (review.rating > 2) continue;\n\n  // Only recent reviews\n  const reviewDate = new Date(review.time * 1000);\n  if (reviewDate.getTime() < oneWeekAgo) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'bad_competitor_review',\n      signal_strength: 8,\n      source: 'Google Reviews',\n\n      // Lead info\n      lead_name: review.author_name,\n      lead_url: review.author_url || null,\n      company_name: null,\n      company_url: null,\n\n      // Signal context\n      competitor_name: competitorName,\n      review_rating: review.rating,\n      review_text: review.text,\n      review_date: reviewDate.toISOString(),\n\n      // For email personalization\n      signal_summary: review.rating + '-star review of ' + competitorName + ': \"' + (review.text || '').substring(0, 100) + '\"',\n      reach_out_reason: 'They left a negative review on your competitor (' + competitorName + ') and may be looking for a better alternative'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'bad_competitor_review', no_results: true } }];"
-      }
+        864,
+        -352
+      ]
     },
     {
-      "id": "8d755430",
-      "name": "Filter Review Signals",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        1160,
-        -380
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -330,56 +407,47 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "8d755430",
+      "name": "Filter Review Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        -352
+      ]
     },
     {
+      "parameters": {
+        "url": "=https://www.google.com/search?q={{ encodeURIComponent(\"site:linkedin.com/jobs \" + $json.job_keywords.join(\" OR \")) }}&tbs=qdr:d&num=20",
+        "options": {
+          "timeout": 15000
+        }
+      },
       "id": "fce41e5e",
       "name": "Search Job Postings",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         560,
-        140
+        192
       ],
-      "parameters": {
-        "method": "GET",
-        "url": "=https://www.google.com/search?q={{ encodeURIComponent(\"site:linkedin.com/jobs \" + $json.job_keywords.join(\" OR \")) }}&tbs=qdr:d&num=20",
-        "options": {
-          "timeout": 15000
-        },
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-            }
-          ]
-        }
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Parse job listing search results for hiring signals\n// NOTE: For production, use LinkedIn API, Indeed API, or a job board aggregator\n// This demo parses Google search results for job postings\n\nconst html = $input.first().json.data || '';\nconst config = $('Configuration').first().json;\nconst signals = [];\n\n// Extract job listing snippets from search results\n// Pattern: company name + job title + location\nconst jobPattern = /<a[^>]*href=\"([^\"]*linkedin\\.com\\/jobs[^\"]*)\"[^>]*>([^<]*)<\\/a>/gi;\nlet match;\nconst seen = new Set();\n\nwhile ((match = jobPattern.exec(html)) !== null) {\n  const url = match[1];\n  const title = match[2].replace(/<[^>]*>/g, '');\n\n  if (seen.has(url)) continue;\n  seen.add(url);\n\n  // Extract company name from title (usually \"Job Title at Company\")\n  const parts = title.split(/\\s+at\\s+|\\s+-\\s+|\\s+\\|\\s+/i);\n  const jobTitle = parts[0]?.trim() || title;\n  const companyName = parts[1]?.trim() || 'Unknown';\n\n  // Check if job title relates to our service area\n  const isRelevant = config.job_keywords.some(kw =>\n    title.toLowerCase().includes(kw.toLowerCase())\n  );\n\n  if (!isRelevant) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'hiring_signal',\n      signal_strength: 7,\n      source: 'Job Board',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      job_title: jobTitle,\n      job_url: url,\n\n      signal_summary: companyName + ' is hiring: \"' + jobTitle + '\"',\n      reach_out_reason: 'They are hiring for ' + jobTitle + ', which means they have budget allocated for ' + config.industry + ' and may need external help'\n    }\n  });\n}\n\n// If no results from HTML parsing, provide a demo signal structure\nif (signals.length === 0) {\n  return [{ json: { signal_type: 'hiring_signal', no_results: true } }];\n}\n\nreturn signals;"
+      },
       "id": "0c76180f",
       "name": "Parse Job Listings",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        860,
-        140
-      ],
-      "parameters": {
-        "jsCode": "// Parse job listing search results for hiring signals\n// NOTE: For production, use LinkedIn API, Indeed API, or a job board aggregator\n// This demo parses Google search results for job postings\n\nconst html = $input.first().json.data || '';\nconst config = $('Configuration').first().json;\nconst signals = [];\n\n// Extract job listing snippets from search results\n// Pattern: company name + job title + location\nconst jobPattern = /<a[^>]*href=\"([^\"]*linkedin\\.com\\/jobs[^\"]*)\"[^>]*>([^<]*)<\\/a>/gi;\nlet match;\nconst seen = new Set();\n\nwhile ((match = jobPattern.exec(html)) !== null) {\n  const url = match[1];\n  const title = match[2].replace(/<[^>]*>/g, '');\n\n  if (seen.has(url)) continue;\n  seen.add(url);\n\n  // Extract company name from title (usually \"Job Title at Company\")\n  const parts = title.split(/\\s+at\\s+|\\s+-\\s+|\\s+\\|\\s+/i);\n  const jobTitle = parts[0]?.trim() || title;\n  const companyName = parts[1]?.trim() || 'Unknown';\n\n  // Check if job title relates to our service area\n  const isRelevant = config.job_keywords.some(kw =>\n    title.toLowerCase().includes(kw.toLowerCase())\n  );\n\n  if (!isRelevant) continue;\n\n  signals.push({\n    json: {\n      signal_type: 'hiring_signal',\n      signal_strength: 7,\n      source: 'Job Board',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      job_title: jobTitle,\n      job_url: url,\n\n      signal_summary: companyName + ' is hiring: \"' + jobTitle + '\"',\n      reach_out_reason: 'They are hiring for ' + jobTitle + ', which means they have budget allocated for ' + config.industry + ' and may need external help'\n    }\n  });\n}\n\n// If no results from HTML parsing, provide a demo signal structure\nif (signals.length === 0) {\n  return [{ json: { signal_type: 'hiring_signal', no_results: true } }];\n}\n\nreturn signals;"
-      }
+        864,
+        192
+      ]
     },
     {
-      "id": "97a08239",
-      "name": "Filter Job Signals",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        1160,
-        140
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -402,95 +470,93 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "97a08239",
+      "name": "Filter Job Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1184,
+        192
+      ]
     },
     {
+      "parameters": {
+        "jsCode": "// Load prospect URLs from configuration\n// Each URL will be fetched and compared against its previous hash\nconst config = $('Configuration').first().json;\nconst urls = config.prospect_urls || [];\n\nreturn urls.map(url => ({\n  json: { url, signal_type: 'website_change' }\n}));"
+      },
       "id": "1710bb5a",
       "name": "Load Prospect URLs",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
         560,
-        660
-      ],
-      "parameters": {
-        "jsCode": "// Load prospect URLs from configuration\n// Each URL will be fetched and compared against its previous hash\nconst config = $('Configuration').first().json;\nconst urls = config.prospect_urls || [];\n\nreturn urls.map(url => ({\n  json: { url, signal_type: 'website_change' }\n}));"
-      }
+        672
+      ]
     },
     {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "maxRedirects": 3
+            }
+          },
+          "timeout": 10000
+        }
+      },
       "id": "a1c09296",
       "name": "Fetch Website Content",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        860,
-        660
+        864,
+        672
       ],
-      "parameters": {
-        "method": "GET",
-        "url": "={{ $json.url }}",
-        "options": {
-          "timeout": 10000,
-          "redirect": {
-            "redirect": {
-              "followRedirects": true,
-              "maxRedirects": 3
-            }
-          }
-        }
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Compare current page content hash with stored version\n// Uses a simple hash to detect meaningful changes\n// In production, store hashes in Supabase/database between runs\n\nconst items = $input.all();\nconst signals = [];\n\nfor (const item of items) {\n  const html = item.json.data || item.json.body || '';\n  const url = item.json.url || 'unknown';\n\n  if (!html || html.length < 100) continue;\n\n  // Extract meaningful content (strip scripts, styles, whitespace)\n  const content = html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/\\s+/g, ' ')\n    .trim()\n    .substring(0, 5000);\n\n  // Simple hash for change detection\n  let hash = 0;\n  for (let i = 0; i < content.length; i++) {\n    const char = content.charCodeAt(i);\n    hash = ((hash << 5) - hash) + char;\n    hash = hash & hash; // Convert to 32-bit integer\n  }\n\n  // Extract page title\n  const titleMatch = html.match(/<title[^>]*>([^<]*)<\\/title>/i);\n  const pageTitle = titleMatch ? titleMatch[1].trim() : url;\n\n  // NOTE: In production, compare this hash against stored value in database\n  // For demo, we flag all sites as \"checked\" and provide the hash\n  // To detect ACTUAL changes, store hashes between runs:\n  //   1. Query Supabase for previous hash by URL\n  //   2. Compare with current hash\n  //   3. If different, flag as changed\n  //   4. Update stored hash\n\n  signals.push({\n    json: {\n      signal_type: 'website_change',\n      signal_strength: 5,\n      source: 'Website Monitor',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: pageTitle,\n      company_url: url,\n\n      page_title: pageTitle,\n      content_hash: hash.toString(),\n      content_length: content.length,\n      checked_at: new Date().toISOString(),\n\n      // This will be true when a change is detected\n      // For demo purposes, set to false (no previous hash to compare)\n      change_detected: false,\n\n      signal_summary: 'Website monitored: ' + pageTitle,\n      reach_out_reason: 'Their website recently changed, indicating active investment in their web presence'\n    }\n  });\n}\n\n// Only pass through items where change was detected\nconst changed = signals.filter(s => s.json.change_detected);\nreturn changed.length > 0 ? changed : [{ json: { signal_type: 'website_change', no_results: true } }];"
+      },
       "id": "ffec7030",
       "name": "Detect Changes",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1160,
-        660
-      ],
-      "parameters": {
-        "jsCode": "// Compare current page content hash with stored version\n// Uses a simple hash to detect meaningful changes\n// In production, store hashes in Supabase/database between runs\n\nconst items = $input.all();\nconst signals = [];\n\nfor (const item of items) {\n  const html = item.json.data || item.json.body || '';\n  const url = item.json.url || 'unknown';\n\n  if (!html || html.length < 100) continue;\n\n  // Extract meaningful content (strip scripts, styles, whitespace)\n  const content = html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/\\s+/g, ' ')\n    .trim()\n    .substring(0, 5000);\n\n  // Simple hash for change detection\n  let hash = 0;\n  for (let i = 0; i < content.length; i++) {\n    const char = content.charCodeAt(i);\n    hash = ((hash << 5) - hash) + char;\n    hash = hash & hash; // Convert to 32-bit integer\n  }\n\n  // Extract page title\n  const titleMatch = html.match(/<title[^>]*>([^<]*)<\\/title>/i);\n  const pageTitle = titleMatch ? titleMatch[1].trim() : url;\n\n  // NOTE: In production, compare this hash against stored value in database\n  // For demo, we flag all sites as \"checked\" and provide the hash\n  // To detect ACTUAL changes, store hashes between runs:\n  //   1. Query Supabase for previous hash by URL\n  //   2. Compare with current hash\n  //   3. If different, flag as changed\n  //   4. Update stored hash\n\n  signals.push({\n    json: {\n      signal_type: 'website_change',\n      signal_strength: 5,\n      source: 'Website Monitor',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: pageTitle,\n      company_url: url,\n\n      page_title: pageTitle,\n      content_hash: hash.toString(),\n      content_length: content.length,\n      checked_at: new Date().toISOString(),\n\n      // This will be true when a change is detected\n      // For demo purposes, set to false (no previous hash to compare)\n      change_detected: false,\n\n      signal_summary: 'Website monitored: ' + pageTitle,\n      reach_out_reason: 'Their website recently changed, indicating active investment in their web presence'\n    }\n  });\n}\n\n// Only pass through items where change was detected\nconst changed = signals.filter(s => s.json.change_detected);\nreturn changed.length > 0 ? changed : [{ json: { signal_type: 'website_change', no_results: true } }];"
-      }
+        1168,
+        672
+      ]
     },
     {
+      "parameters": {
+        "url": "=https://news.google.com/rss/search?q={{ encodeURIComponent($json.news_keywords.join(' OR ')) }}&hl=en-US&gl=US&ceid=US:en",
+        "options": {}
+      },
       "id": "6b46d18e",
       "name": "Fetch Google News RSS",
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.2,
       "position": [
         560,
-        1180
+        1184
       ],
-      "parameters": {
-        "url": "=https://news.google.com/rss/search?q={{ encodeURIComponent($json.news_keywords.join(' OR ')) }}&hl=en-US&gl=US&ceid=US:en",
-        "options": {}
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Parse RSS Feed Read output for funding, acquisition, and growth signals\n// RSS Read returns structured items with: title, link, pubDate, content, description\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst signals = [];\n\nfor (const item of items) {\n  const title = (item.json.title || '').trim();\n  const link = (item.json.link || '').trim();\n  const pubDate = item.json.pubDate ? new Date(item.json.pubDate) : new Date();\n  const desc = (item.json.content || item.json.description || '').replace(/<[^>]*>/g, '').trim();\n\n  // Skip if older than 48 hours\n  if (Date.now() - pubDate.getTime() > 48 * 3600 * 1000) continue;\n\n  // Skip empty items\n  if (!title) continue;\n\n  // Detect signal type from content\n  const text = (title + ' ' + desc).toLowerCase();\n  let newsType = 'general';\n  if (/fund|raise|series [a-f]|seed|invest|venture|capital/i.test(text)) newsType = 'funding';\n  else if (/acqui|merge|buy|purchase/i.test(text)) newsType = 'acquisition';\n  else if (/launch|expand|grow|hire|open|new office/i.test(text)) newsType = 'expansion';\n  else if (/partner|collaborat|deal|contract/i.test(text)) newsType = 'partnership';\n\n  // Extract company name (first proper noun cluster in title)\n  const companyMatch = title.match(/^([A-Z][a-zA-Z]+(\\s+[A-Z][a-zA-Z]+)*)/);\n  const companyName = companyMatch ? companyMatch[0] : title.split(/[:\\-|]/)[0].trim();\n\n  signals.push({\n    json: {\n      signal_type: 'news_signal',\n      signal_strength: newsType === 'funding' ? 8 : 7,\n      source: 'Google News',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      news_title: title,\n      news_url: link,\n      news_type: newsType,\n      news_date: pubDate.toISOString(),\n      news_snippet: desc.substring(0, 300),\n\n      signal_summary: newsType.toUpperCase() + ': ' + title.substring(0, 100),\n      reach_out_reason: newsType === 'funding'\n        ? 'They just raised funding, meaning they have budget to invest in ' + config.industry\n        : 'Recent news suggests they are actively growing and may need ' + config.industry + ' services'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'news_signal', no_results: true } }];"
+      },
       "id": "3574ef24",
       "name": "Parse News Articles",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        860,
-        1180
-      ],
-      "parameters": {
-        "jsCode": "// Parse RSS Feed Read output for funding, acquisition, and growth signals\n// RSS Read returns structured items with: title, link, pubDate, content, description\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst signals = [];\n\nfor (const item of items) {\n  const title = (item.json.title || '').trim();\n  const link = (item.json.link || '').trim();\n  const pubDate = item.json.pubDate ? new Date(item.json.pubDate) : new Date();\n  const desc = (item.json.content || item.json.description || '').replace(/<[^>]*>/g, '').trim();\n\n  // Skip if older than 48 hours\n  if (Date.now() - pubDate.getTime() > 48 * 3600 * 1000) continue;\n\n  // Skip empty items\n  if (!title) continue;\n\n  // Detect signal type from content\n  const text = (title + ' ' + desc).toLowerCase();\n  let newsType = 'general';\n  if (/fund|raise|series [a-f]|seed|invest|venture|capital/i.test(text)) newsType = 'funding';\n  else if (/acqui|merge|buy|purchase/i.test(text)) newsType = 'acquisition';\n  else if (/launch|expand|grow|hire|open|new office/i.test(text)) newsType = 'expansion';\n  else if (/partner|collaborat|deal|contract/i.test(text)) newsType = 'partnership';\n\n  // Extract company name (first proper noun cluster in title)\n  const companyMatch = title.match(/^([A-Z][a-zA-Z]+(\\s+[A-Z][a-zA-Z]+)*)/);\n  const companyName = companyMatch ? companyMatch[0] : title.split(/[:\\-|]/)[0].trim();\n\n  signals.push({\n    json: {\n      signal_type: 'news_signal',\n      signal_strength: newsType === 'funding' ? 8 : 7,\n      source: 'Google News',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      news_title: title,\n      news_url: link,\n      news_type: newsType,\n      news_date: pubDate.toISOString(),\n      news_snippet: desc.substring(0, 300),\n\n      signal_summary: newsType.toUpperCase() + ': ' + title.substring(0, 100),\n      reach_out_reason: newsType === 'funding'\n        ? 'They just raised funding, meaning they have budget to invest in ' + config.industry\n        : 'Recent news suggests they are actively growing and may need ' + config.industry + ' services'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'news_signal', no_results: true } }];"
-      }
+        864,
+        1184
+      ]
     },
     {
-      "id": "7de3e9da",
-      "name": "Filter News Signals",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        1160,
-        1180
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -513,56 +579,47 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "7de3e9da",
+      "name": "Filter News Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        1184
+      ]
     },
     {
+      "parameters": {
+        "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.social_keywords.join(\" OR \")) }}&sort=new&limit=25&t=day",
+        "options": {
+          "timeout": 15000
+        }
+      },
       "id": "2704b7c1",
       "name": "Social Media Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         560,
-        1700
+        1712
       ],
-      "parameters": {
-        "method": "GET",
-        "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.social_keywords.join(\" OR \")) }}&sort=new&limit=25&t=day",
-        "options": {
-          "timeout": 15000
-        },
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "value": "BuyingSignalRadar/1.0"
-            }
-          ]
-        }
-      },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Parse social media posts for buying intent signals\n// This branch searches Reddit + social platforms for complaints,\n// questions, and expressions of need related to your service\nconst data = $input.first().json;\nconst posts = data?.data?.children || [];\nconst config = $('Configuration').first().json;\n\nconst signals = [];\nconst now = Math.floor(Date.now() / 1000);\nconst oneDayAgo = now - 86400;\n\nfor (const post of posts) {\n  const p = post.data;\n\n  if (p.created_utc < oneDayAgo) continue;\n  if (p.author === '[deleted]' || p.author === 'AutoModerator') continue;\n\n  const text = (p.title + ' ' + (p.selftext || '')).toLowerCase();\n\n  // Detect complaint vs question vs need\n  let intentType = 'general';\n  if (/hate|terrible|awful|worst|frustrated|disappointed|broken/i.test(text)) intentType = 'complaint';\n  else if (/recommend|suggest|looking for|need|help me find|anyone know/i.test(text)) intentType = 'seeking';\n  else if (/switch|replace|alternative|better than|move away/i.test(text)) intentType = 'switching';\n\n  // Higher strength for switching intent\n  const strength = intentType === 'switching' ? 8 : intentType === 'complaint' ? 7 : 6;\n\n  signals.push({\n    json: {\n      signal_type: 'social_intent',\n      signal_strength: strength,\n      source: 'Social Listening',\n\n      lead_name: p.author,\n      lead_url: 'https://reddit.com/user/' + p.author,\n      company_name: null,\n      company_url: null,\n\n      intent_type: intentType,\n      title: p.title,\n      body: (p.selftext || '').substring(0, 500),\n      post_url: 'https://reddit.com' + p.permalink,\n      subreddit: p.subreddit,\n\n      signal_summary: intentType.toUpperCase() + ' on r/' + p.subreddit + ': \"' + p.title.substring(0, 100) + '\"',\n      reach_out_reason: intentType === 'switching'\n        ? 'They are actively looking to switch from their current provider'\n        : 'They expressed frustration or need related to ' + config.industry\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'social_intent', no_results: true } }];"
+      },
       "id": "27698bae",
       "name": "Parse Social Signals",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        860,
-        1700
-      ],
-      "parameters": {
-        "jsCode": "// Parse social media posts for buying intent signals\n// This branch searches Reddit + social platforms for complaints,\n// questions, and expressions of need related to your service\nconst data = $input.first().json;\nconst posts = data?.data?.children || [];\nconst config = $('Configuration').first().json;\n\nconst signals = [];\nconst now = Math.floor(Date.now() / 1000);\nconst oneDayAgo = now - 86400;\n\nfor (const post of posts) {\n  const p = post.data;\n\n  if (p.created_utc < oneDayAgo) continue;\n  if (p.author === '[deleted]' || p.author === 'AutoModerator') continue;\n\n  const text = (p.title + ' ' + (p.selftext || '')).toLowerCase();\n\n  // Detect complaint vs question vs need\n  let intentType = 'general';\n  if (/hate|terrible|awful|worst|frustrated|disappointed|broken/i.test(text)) intentType = 'complaint';\n  else if (/recommend|suggest|looking for|need|help me find|anyone know/i.test(text)) intentType = 'seeking';\n  else if (/switch|replace|alternative|better than|move away/i.test(text)) intentType = 'switching';\n\n  // Higher strength for switching intent\n  const strength = intentType === 'switching' ? 8 : intentType === 'complaint' ? 7 : 6;\n\n  signals.push({\n    json: {\n      signal_type: 'social_intent',\n      signal_strength: strength,\n      source: 'Social Listening',\n\n      lead_name: p.author,\n      lead_url: 'https://reddit.com/user/' + p.author,\n      company_name: null,\n      company_url: null,\n\n      intent_type: intentType,\n      title: p.title,\n      body: (p.selftext || '').substring(0, 500),\n      post_url: 'https://reddit.com' + p.permalink,\n      subreddit: p.subreddit,\n\n      signal_summary: intentType.toUpperCase() + ' on r/' + p.subreddit + ': \"' + p.title.substring(0, 100) + '\"',\n      reach_out_reason: intentType === 'switching'\n        ? 'They are actively looking to switch from their current provider'\n        : 'They expressed frustration or need related to ' + config.industry\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'social_intent', no_results: true } }];"
-      }
+        864,
+        1712
+      ]
     },
     {
-      "id": "7c0c7eaa",
-      "name": "Filter Social Signals",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        1160,
-        1700
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -585,30 +642,30 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "7c0c7eaa",
+      "name": "Filter Social Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        1712
+      ]
     },
     {
+      "parameters": {
+        "jsCode": "// ============================================================\n// INTENT SCORING ENGINE\n// ============================================================\n// Combines signals from all 6 branches into a unified intent score.\n// All branch filter outputs connect directly to this node.\n// n8n waits for all connected inputs before executing.\n//\n// Each signal has a base strength (0-10) which gets modified by\n// bonus factors like urgency, budget mentions, and recency.\n//\n// Final score = base_strength + bonuses (capped at 10)\n// Leads above the threshold proceed to AI outreach.\n// ============================================================\n\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst threshold = config.score_threshold || 5.0;\nconst scored = [];\n\nfor (const item of items) {\n  const s = item.json;\n\n  // Skip empty/no-result items\n  if (s.no_results) continue;\n  if (!s.signal_type) continue;\n\n  let score = s.signal_strength || 5;\n  const bonuses = [];\n\n  // BONUS: Budget mention (+1.0)\n  if (s.has_budget_mention) {\n    score += 1.0;\n    bonuses.push('budget_mention');\n  }\n\n  // BONUS: Urgency signals (+1.5)\n  if (s.is_urgent) {\n    score += 1.5;\n    bonuses.push('urgent');\n  }\n\n  // BONUS: Multiple keyword matches (+0.5 per extra match)\n  if (s.keyword_matches && s.keyword_matches > 1) {\n    score += (s.keyword_matches - 1) * 0.5;\n    bonuses.push('multi_keyword');\n  }\n\n  // BONUS: Switching intent (+1.0)\n  if (s.intent_type === 'switching') {\n    score += 1.0;\n    bonuses.push('switching_intent');\n  }\n\n  // BONUS: Funding news (+1.5)\n  if (s.news_type === 'funding') {\n    score += 1.5;\n    bonuses.push('funding_news');\n  }\n\n  // BONUS: Very negative review (1 star) (+0.5)\n  if (s.review_rating === 1) {\n    score += 0.5;\n    bonuses.push('very_negative');\n  }\n\n  // Cap at 10\n  score = Math.min(10, Math.round(score * 10) / 10);\n\n  scored.push({\n    json: {\n      ...s,\n      intent_score: score,\n      score_bonuses: bonuses,\n      above_threshold: score >= threshold,\n      scored_at: new Date().toISOString()\n    }\n  });\n}\n\n// Sort by score descending\nscored.sort((a, b) => b.json.intent_score - a.json.intent_score);\n\nreturn scored.length > 0 ? scored : [{ json: { no_signals: true, message: 'No signals detected in this scan' } }];"
+      },
       "id": "848e66bf",
       "name": "Calculate Intent Score",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
         1760,
-        660
-      ],
-      "parameters": {
-        "jsCode": "// ============================================================\n// INTENT SCORING ENGINE\n// ============================================================\n// Combines signals from all 6 branches into a unified intent score.\n// All branch filter outputs connect directly to this node.\n// n8n waits for all connected inputs before executing.\n//\n// Each signal has a base strength (0-10) which gets modified by\n// bonus factors like urgency, budget mentions, and recency.\n//\n// Final score = base_strength + bonuses (capped at 10)\n// Leads above the threshold proceed to AI outreach.\n// ============================================================\n\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst threshold = config.score_threshold || 5.0;\nconst scored = [];\n\nfor (const item of items) {\n  const s = item.json;\n\n  // Skip empty/no-result items\n  if (s.no_results) continue;\n  if (!s.signal_type) continue;\n\n  let score = s.signal_strength || 5;\n  const bonuses = [];\n\n  // BONUS: Budget mention (+1.0)\n  if (s.has_budget_mention) {\n    score += 1.0;\n    bonuses.push('budget_mention');\n  }\n\n  // BONUS: Urgency signals (+1.5)\n  if (s.is_urgent) {\n    score += 1.5;\n    bonuses.push('urgent');\n  }\n\n  // BONUS: Multiple keyword matches (+0.5 per extra match)\n  if (s.keyword_matches && s.keyword_matches > 1) {\n    score += (s.keyword_matches - 1) * 0.5;\n    bonuses.push('multi_keyword');\n  }\n\n  // BONUS: Switching intent (+1.0)\n  if (s.intent_type === 'switching') {\n    score += 1.0;\n    bonuses.push('switching_intent');\n  }\n\n  // BONUS: Funding news (+1.5)\n  if (s.news_type === 'funding') {\n    score += 1.5;\n    bonuses.push('funding_news');\n  }\n\n  // BONUS: Very negative review (1 star) (+0.5)\n  if (s.review_rating === 1) {\n    score += 0.5;\n    bonuses.push('very_negative');\n  }\n\n  // Cap at 10\n  score = Math.min(10, Math.round(score * 10) / 10);\n\n  scored.push({\n    json: {\n      ...s,\n      intent_score: score,\n      score_bonuses: bonuses,\n      above_threshold: score >= threshold,\n      scored_at: new Date().toISOString()\n    }\n  });\n}\n\n// Sort by score descending\nscored.sort((a, b) => b.json.intent_score - a.json.intent_score);\n\nreturn scored.length > 0 ? scored : [{ json: { no_signals: true, message: 'No signals detected in this scan' } }];"
-      }
+        672
+      ]
     },
     {
-      "id": "02269668",
-      "name": "Filter High Intent",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 2,
-      "position": [
-        2060,
-        660
-      ],
       "parameters": {
         "conditions": {
           "options": {
@@ -631,19 +688,18 @@
           "combinator": "and"
         },
         "options": {}
-      }
+      },
+      "id": "02269668",
+      "name": "Filter High Intent",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        2064,
+        672
+      ]
     },
     {
-      "id": "3722a3f7",
-      "name": "AI: Research Lead",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 2.1,
-      "position": [
-        2360,
-        660
-      ],
       "parameters": {
-        "resource": "text",
         "modelId": {
           "__rl": true,
           "mode": "list",
@@ -657,7 +713,7 @@
               "content": "You are a sales research assistant. Given a buying signal about a potential lead, research what you can infer about them and provide: 1) What they likely need 2) Their probable pain points 3) One specific observation to reference in outreach. Keep it under 150 words. Be specific, not generic."
             },
             {
-              "content": "=Signal type: {{ $json.signal_type }}\nSignal source: {{ $json.source }}\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\nCompany: {{ $json.company_name || 'Unknown' }}\nSignal summary: {{ $json.signal_summary }}\nReason: {{ $json.reach_out_reason }}\nAdditional context: {{ $json.body || $json.review_text || $json.news_snippet || $json.title || '' }}"
+              "content": "=Signal type: {{ $json.signal_type }}\nSignal source: {{ $json.source }}\nLead: {{ $json.lead_name || $json.company_name || \"Unknown\" }}\nCompany: {{ $json.company_name || \"Unknown\" }}\nSignal summary: {{ $json.signal_summary }}\nReason: {{ $json.reach_out_reason }}\nAdditional context: {{ $json.body || $json.review_text || $json.news_snippet || $json.title || \"\" }}"
             }
           ]
         },
@@ -667,25 +723,24 @@
         },
         "simplify": true
       },
+      "id": "3722a3f7",
+      "name": "AI: Research Lead",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        2320,
+        672
+      ],
       "credentials": {
         "openAiApi": {
-          "id": "REPLACE_WITH_YOUR_OPENAI_CREDENTIAL_ID",
-          "name": "OpenAI account"
+          "id": "",
+          "name": "openAiApi"
         }
       },
       "continueOnFail": true
     },
     {
-      "id": "ffc7ae9d",
-      "name": "AI: Write Personalized Email",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 2.1,
-      "position": [
-        2660,
-        660
-      ],
       "parameters": {
-        "resource": "text",
         "modelId": {
           "__rl": true,
           "mode": "list",
@@ -699,7 +754,7 @@
               "content": "You are a cold outreach expert. Write a short, personalized email (50-70 words max) that references a SPECIFIC buying signal. Rules:\n- First line references the signal (what you noticed)\n- Second line connects it to their likely need\n- Third line offers specific value\n- End with a question, not a pitch\n- No exclamation marks, no em-dashes\n- Sound like a human DM, not a sales email\n- Include subject line\n\nFormat:\nSUBJECT: [subject]\n\n[email body]"
             },
             {
-              "content": "=Write an outreach email for this lead:\n\nSignal: {{ $json.signal_summary }}\nReason for reaching out: {{ $json.reach_out_reason }}\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\nCompany: {{ $json.company_name || 'Unknown' }}\nResearch: {{ $('AI: Research Lead').first().json.output || $('AI: Research Lead').first().json.text || 'No additional research' }}\nMy service: {{ $('Configuration').first().json.industry }}\nMy calendar: {{ $('Configuration').first().json.calendar_link }}"
+              "content": "=Write an outreach email for this lead:\n\nSignal: {{ $json.signal_summary }}\nReason for reaching out: {{ $json.reach_out_reason }}\nLead: {{ $json.lead_name || $json.company_name || \"Unknown\" }}\nCompany: {{ $json.company_name || \"Unknown\" }}\nResearch: {{ $(\"AI: Research Lead\").first().json.output || $(\"AI: Research Lead\").first().json.text || \"No additional research\" }}\nMy service: {{ $(\"Configuration\").first().json.industry }}\nMy calendar: {{ $(\"Configuration\").first().json.calendar_link }}"
             }
           ]
         },
@@ -709,36 +764,36 @@
         },
         "simplify": true
       },
+      "id": "ffc7ae9d",
+      "name": "AI: Write Personalized Email",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        2640,
+        672
+      ],
       "credentials": {
         "openAiApi": {
-          "id": "REPLACE_WITH_YOUR_OPENAI_CREDENTIAL_ID",
-          "name": "OpenAI account"
+          "id": "",
+          "name": "openAiApi"
         }
       },
       "continueOnFail": true
     },
     {
+      "parameters": {
+        "jsCode": "// Assemble the final outreach package with all context\n// Signal data flows through the AI nodes, so current item has signal fields\nconst signal = $input.first().json;\nconst config = $('Configuration').first().json;\n\n// OpenAI official node with simplify=true outputs to .output or .text\n// Fall back to raw API format just in case\nconst research = $('AI: Research Lead').first().json.output\n  || $('AI: Research Lead').first().json.text\n  || $('AI: Research Lead').first().json?.choices?.[0]?.message?.content\n  || 'Research unavailable';\n\nconst emailContent = $('AI: Write Personalized Email').first().json.output\n  || $('AI: Write Personalized Email').first().json.text\n  || $('AI: Write Personalized Email').first().json?.choices?.[0]?.message?.content\n  || 'Email generation failed';\n\n// Parse subject and body from AI output\nconst subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\nconst subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question';\nconst body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\nreturn [{\n  json: {\n    // Lead info\n    lead_name: signal.lead_name || signal.company_name || 'Unknown',\n    lead_email: signal.lead_email || null,\n    company_name: signal.company_name || null,\n    company_url: signal.company_url || null,\n\n    // Signal context\n    signal_type: signal.signal_type,\n    signal_source: signal.source,\n    signal_strength: signal.signal_strength,\n    intent_score: signal.intent_score,\n    score_bonuses: signal.score_bonuses,\n    signal_summary: signal.signal_summary,\n    reach_out_reason: signal.reach_out_reason,\n\n    // AI outputs\n    research_summary: research,\n    email_subject: subject,\n    email_body: body,\n\n    // Metadata\n    generated_at: new Date().toISOString(),\n    from_name: config.from_name,\n    from_email: config.from_email,\n    calendar_link: config.calendar_link\n  }\n}];"
+      },
       "id": "3fc7abe2",
       "name": "Format Outreach Package",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
         2960,
-        660
-      ],
-      "parameters": {
-        "jsCode": "// Assemble the final outreach package with all context\n// Signal data flows through the AI nodes, so current item has signal fields\nconst signal = $input.first().json;\nconst config = $('Configuration').first().json;\n\n// OpenAI official node with simplify=true outputs to .output or .text\n// Fall back to raw API format just in case\nconst research = $('AI: Research Lead').first().json.output\n  || $('AI: Research Lead').first().json.text\n  || $('AI: Research Lead').first().json?.choices?.[0]?.message?.content\n  || 'Research unavailable';\n\nconst emailContent = $('AI: Write Personalized Email').first().json.output\n  || $('AI: Write Personalized Email').first().json.text\n  || $('AI: Write Personalized Email').first().json?.choices?.[0]?.message?.content\n  || 'Email generation failed';\n\n// Parse subject and body from AI output\nconst subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\nconst subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question';\nconst body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\nreturn [{\n  json: {\n    // Lead info\n    lead_name: signal.lead_name || signal.company_name || 'Unknown',\n    lead_email: signal.lead_email || null,\n    company_name: signal.company_name || null,\n    company_url: signal.company_url || null,\n\n    // Signal context\n    signal_type: signal.signal_type,\n    signal_source: signal.source,\n    signal_strength: signal.signal_strength,\n    intent_score: signal.intent_score,\n    score_bonuses: signal.score_bonuses,\n    signal_summary: signal.signal_summary,\n    reach_out_reason: signal.reach_out_reason,\n\n    // AI outputs\n    research_summary: research,\n    email_subject: subject,\n    email_body: body,\n\n    // Metadata\n    generated_at: new Date().toISOString(),\n    from_name: config.from_name,\n    from_email: config.from_email,\n    calendar_link: config.calendar_link\n  }\n}];"
-      }
+        672
+      ]
     },
     {
-      "id": "ad54017e",
-      "name": "Send Email via Gmail",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        3260,
-        860
-      ],
       "parameters": {
         "method": "POST",
         "url": "=https://your-n8n-instance.com/webhook/gmail-send",
@@ -749,44 +804,43 @@
           "timeout": 15000
         }
       },
-      "continueOnFail": true,
-      "disabled": true
+      "id": "ad54017e",
+      "name": "Send Email via Gmail",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3264,
+        864
+      ],
+      "disabled": true,
+      "continueOnFail": true
     },
     {
-      "id": "365e85b0",
-      "name": "Telegram: High Intent Alert",
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1.2,
-      "position": [
-        3260,
-        460
-      ],
       "parameters": {
-        "resource": "message",
-        "operation": "sendMessage",
         "chatId": "={{ $('Configuration').first().json.telegram_chat_id }}",
         "text": "=🚨 HIGH-INTENT LEAD DETECTED\n\nScore: {{ $json.intent_score }}/10 {{ $json.score_bonuses?.length > 0 ? '(+' + $json.score_bonuses.join(', +') + ')' : '' }}\nSource: {{ $json.signal_source }}\nType: {{ $json.signal_type }}\n\nLead: {{ $json.lead_name }}\nCompany: {{ $json.company_name || 'Unknown' }}\n\nSignal:\n{{ $json.signal_summary }}\n\nWhy reach out:\n{{ $json.reach_out_reason }}\n\nAI Research:\n{{ ($json.research_summary || '').substring(0, 500) }}\n\nDraft Email:\nSubject: {{ $json.email_subject }}\n{{ ($json.email_body || '').substring(0, 500) }}\n\n📊 Generated at {{ $json.generated_at }}",
         "additionalFields": {
           "parse_mode": "Markdown"
         }
       },
+      "id": "365e85b0",
+      "name": "Telegram: High Intent Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3264,
+        464
+      ],
+      "webhookId": "6edb1431-d1b7-4398-8772-eb3c6398a582",
       "credentials": {
         "telegramApi": {
-          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
-          "name": "Telegram account"
+          "id": "",
+          "name": "telegramApi"
         }
       },
       "continueOnFail": true
     },
     {
-      "id": "a27b12e9",
-      "name": "Log to Google Sheets",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.7,
-      "position": [
-        3260,
-        1060
-      ],
       "parameters": {
         "operation": "append",
         "documentId": {
@@ -908,14 +962,22 @@
         },
         "options": {}
       },
+      "id": "a27b12e9",
+      "name": "Log to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3264,
+        1072
+      ],
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "REPLACE_WITH_YOUR_GOOGLE_CREDENTIAL_ID",
-          "name": "Google Sheets account"
+          "id": "",
+          "name": "googleSheetsOAuth2Api"
         }
       },
-      "continueOnFail": true,
-      "disabled": true
+      "disabled": true,
+      "continueOnFail": true
     }
   ],
   "connections": {
@@ -1231,27 +1293,7 @@
     }
   },
   "settings": {
-    "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   },
-  "tags": [
-    {
-      "name": "sales"
-    },
-    {
-      "name": "automation"
-    },
-    {
-      "name": "ai"
-    },
-    {
-      "name": "lead-generation"
-    },
-    {
-      "name": "intent-detection"
-    }
-  ]
+  "pinData": {}
 }
