@@ -1,0 +1,16 @@
+# Build artifacts
+*.js
+!workflow.json
+connections-only.json
+nodes-only.json
+update-payload.json
+
+# Junk
+${t.node}
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Screenshots (local only)
+screenshots/
