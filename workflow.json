@@ -182,8 +182,6 @@
     },
     {
       "parameters": {
-        "mode": "manual",
-        "duplicateItem": false,
         "assignments": {
           "assignments": [
             {
@@ -261,7 +259,7 @@
             {
               "id": "a13",
               "name": "calendar_link",
-              "value": "https://cal.com/your-link/15min",
+              "value": "https://cal.com/you/15min",
               "type": "string"
             },
             {
@@ -273,13 +271,11 @@
             {
               "id": "a15",
               "name": "from_email",
-              "value": "your@email.com",
+              "value": "you@example.com",
               "type": "string"
             }
           ]
         },
-        "includeOtherFields": false,
-        "include": "none",
         "options": {}
       },
       "id": "c1214eb0",
@@ -294,6 +290,19 @@
     {
       "parameters": {
         "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.search_queries_reddit[0] + \" OR \" + $json.search_queries_reddit[1] + \" OR \" + $json.search_queries_reddit[2]) }}&sort=new&limit=25&t=day",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
         "options": {
           "timeout": 15000
         }
@@ -319,7 +328,8 @@
       "position": [
         864,
         -896
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -327,17 +337,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "d0e1b3e1",
-              "leftValue": "={{ $json.no_results }}",
-              "rightValue": true,
+              "id": "sig_filter_reddit_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
               "operator": {
-                "type": "boolean",
-                "operation": "notTrue"
+                "type": "number",
+                "operation": "gte"
               }
             }
           ],
@@ -382,7 +392,8 @@
       "position": [
         864,
         -352
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -390,17 +401,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "7d365700",
-              "leftValue": "={{ $json.no_results }}",
-              "rightValue": true,
+              "id": "sig_filter_review_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
               "operator": {
-                "type": "boolean",
-                "operation": "notTrue"
+                "type": "number",
+                "operation": "gte"
               }
             }
           ],
@@ -420,6 +431,15 @@
     {
       "parameters": {
         "url": "=https://www.google.com/search?q={{ encodeURIComponent(\"site:linkedin.com/jobs \" + $json.job_keywords.join(\" OR \")) }}&tbs=qdr:d&num=20",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            }
+          ]
+        },
         "options": {
           "timeout": 15000
         }
@@ -445,7 +465,8 @@
       "position": [
         864,
         192
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -453,17 +474,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "f2341d1c",
-              "leftValue": "={{ $json.no_results }}",
-              "rightValue": true,
+              "id": "sig_filter_job_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
               "operator": {
-                "type": "boolean",
-                "operation": "notTrue"
+                "type": "number",
+                "operation": "gte"
               }
             }
           ],
@@ -491,11 +512,21 @@
       "position": [
         560,
         672
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
         "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            }
+          ]
+        },
         "options": {
           "redirect": {
             "redirect": {
@@ -526,7 +557,8 @@
       "position": [
         1168,
         672
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -554,7 +586,8 @@
       "position": [
         864,
         1184
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -562,17 +595,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "d9799721",
-              "leftValue": "={{ $json.no_results }}",
-              "rightValue": true,
+              "id": "sig_filter_news_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
               "operator": {
-                "type": "boolean",
-                "operation": "notTrue"
+                "type": "number",
+                "operation": "gte"
               }
             }
           ],
@@ -592,6 +625,19 @@
     {
       "parameters": {
         "url": "=https://www.reddit.com/search.json?q={{ encodeURIComponent($json.social_keywords.join(\" OR \")) }}&sort=new&limit=25&t=day",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
         "options": {
           "timeout": 15000
         }
@@ -617,7 +663,8 @@
       "position": [
         864,
         1712
-      ]
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
@@ -625,17 +672,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "92c71e52",
-              "leftValue": "={{ $json.no_results }}",
-              "rightValue": true,
+              "id": "sig_filter_social_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
               "operator": {
-                "type": "boolean",
-                "operation": "notTrue"
+                "type": "number",
+                "operation": "gte"
               }
             }
           ],
@@ -671,17 +718,17 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict",
+            "typeValidation": "loose",
             "version": 2
           },
           "conditions": [
             {
-              "id": "071f230b",
+              "id": "hi_score_check",
               "leftValue": "={{ $json.above_threshold }}",
-              "rightValue": true,
+              "rightValue": "true",
               "operator": {
-                "type": "boolean",
-                "operation": "true"
+                "type": "string",
+                "operation": "equals"
               }
             }
           ],
@@ -700,89 +747,67 @@
     },
     {
       "parameters": {
-        "modelId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "gpt-4o-mini",
-          "cachedResultName": "GPT-4O-MINI"
-        },
-        "messages": {
-          "values": [
-            {
-              "role": "system",
-              "content": "You are a sales research assistant. Given a buying signal about a potential lead, research what you can infer about them and provide: 1) What they likely need 2) Their probable pain points 3) One specific observation to reference in outreach. Keep it under 150 words. Be specific, not generic."
-            },
-            {
-              "content": "=Signal type: {{ $json.signal_type }}\nSignal source: {{ $json.source }}\nLead: {{ $json.lead_name || $json.company_name || \"Unknown\" }}\nCompany: {{ $json.company_name || \"Unknown\" }}\nSignal summary: {{ $json.signal_summary }}\nReason: {{ $json.reach_out_reason }}\nAdditional context: {{ $json.body || $json.review_text || $json.news_snippet || $json.title || \"\" }}"
-            }
-          ]
-        },
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ model: \"gpt-4o-mini\", messages: [ { role: \"system\", content: \"You are a sales research assistant. Given a buying signal about a potential lead, research what you can infer about them and provide: 1) What they likely need 2) Their probable pain points 3) One specific observation to reference in outreach. Keep it under 150 words. Be specific, not generic.\" }, { role: \"user\", content: \"Signal type: \" + $json.signal_type + \"\\nSignal source: \" + $json.source + \"\\nLead: \" + ($json.lead_name || $json.company_name || \"Unknown\") + \"\\nCompany: \" + ($json.company_name || \"Unknown\") + \"\\nSignal summary: \" + $json.signal_summary + \"\\nReason: \" + $json.reach_out_reason + \"\\nAdditional context: \" + ($json.body || $json.review_text || $json.news_snippet || $json.title || \"\") } ], temperature: 0.3, max_tokens: 500 }) }}",
         "options": {
-          "temperature": 0.3,
-          "maxTokens": 500
-        },
-        "simplify": true
+          "timeout": 30000
+        }
       },
       "id": "3722a3f7",
       "name": "AI: Research Lead",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 2.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
         2320,
         672
       ],
       "credentials": {
-        "openAiApi": {
-          "id": "",
-          "name": "openAiApi"
+        "httpHeaderAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "OpenAI API Key"
         }
       },
       "continueOnFail": true
     },
     {
       "parameters": {
-        "modelId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "gpt-4o-mini",
-          "cachedResultName": "GPT-4O-MINI"
-        },
-        "messages": {
-          "values": [
-            {
-              "role": "system",
-              "content": "You are a cold outreach expert. Write a short, personalized email (50-70 words max) that references a SPECIFIC buying signal. Rules:\n- First line references the signal (what you noticed)\n- Second line connects it to their likely need\n- Third line offers specific value\n- End with a question, not a pitch\n- No exclamation marks, no em-dashes\n- Sound like a human DM, not a sales email\n- Include subject line\n\nFormat:\nSUBJECT: [subject]\n\n[email body]"
-            },
-            {
-              "content": "=Write an outreach email for this lead:\n\nSignal: {{ $json.signal_summary }}\nReason for reaching out: {{ $json.reach_out_reason }}\nLead: {{ $json.lead_name || $json.company_name || \"Unknown\" }}\nCompany: {{ $json.company_name || \"Unknown\" }}\nResearch: {{ $(\"AI: Research Lead\").first().json.output || $(\"AI: Research Lead\").first().json.text || \"No additional research\" }}\nMy service: {{ $(\"Configuration\").first().json.industry }}\nMy calendar: {{ $(\"Configuration\").first().json.calendar_link }}"
-            }
-          ]
-        },
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ model: \"gpt-4o-mini\", messages: [ { role: \"system\", content: \"You are a cold outreach expert. Write a short, personalized email (50-70 words max) that references a SPECIFIC buying signal. Rules:\\\\n- First line references the signal (what you noticed)\\\\n- Second line connects it to their likely need\\\\n- Third line offers specific value\\\\n- End with a question, not a pitch\\\\n- No exclamation marks, no em-dashes\\\\n- Sound like a human DM, not a sales email\\\\n- Include subject line\\\\n\\\\nFormat:\\\\nSUBJECT: [subject]\\\\n\\\\n[email body]\" }, { role: \"user\", content: \"Write an outreach email for this lead:\\n\\nSignal: \" + $(\"Filter High Intent\").item.json.signal_summary + \"\\nReason for reaching out: \" + $(\"Filter High Intent\").item.json.reach_out_reason + \"\\nLead: \" + ($(\"Filter High Intent\").item.json.lead_name || $(\"Filter High Intent\").item.json.company_name || \"Unknown\") + \"\\nCompany: \" + ($(\"Filter High Intent\").item.json.company_name || \"Unknown\") + \"\\nResearch: \" + ($json.choices ? $json.choices[0].message.content : \"No additional research\") + \"\\nMy service: \" + $(\"Configuration\").first().json.industry + \"\\nMy calendar: \" + $(\"Configuration\").first().json.calendar_link } ], temperature: 0.7, max_tokens: 300 }) }}",
         "options": {
-          "temperature": 0.7,
-          "maxTokens": 300
-        },
-        "simplify": true
+          "timeout": 30000
+        }
       },
       "id": "ffc7ae9d",
       "name": "AI: Write Personalized Email",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "typeVersion": 2.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
         2640,
         672
       ],
       "credentials": {
-        "openAiApi": {
-          "id": "",
-          "name": "openAiApi"
+        "httpHeaderAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "OpenAI API Key"
         }
       },
       "continueOnFail": true
     },
     {
       "parameters": {
-        "jsCode": "// Assemble the final outreach package with all context\n// Signal data flows through the AI nodes, so current item has signal fields\nconst signal = $input.first().json;\nconst config = $('Configuration').first().json;\n\n// OpenAI official node with simplify=true outputs to .output or .text\n// Fall back to raw API format just in case\nconst research = $('AI: Research Lead').first().json.output\n  || $('AI: Research Lead').first().json.text\n  || $('AI: Research Lead').first().json?.choices?.[0]?.message?.content\n  || 'Research unavailable';\n\nconst emailContent = $('AI: Write Personalized Email').first().json.output\n  || $('AI: Write Personalized Email').first().json.text\n  || $('AI: Write Personalized Email').first().json?.choices?.[0]?.message?.content\n  || 'Email generation failed';\n\n// Parse subject and body from AI output\nconst subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\nconst subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question';\nconst body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\nreturn [{\n  json: {\n    // Lead info\n    lead_name: signal.lead_name || signal.company_name || 'Unknown',\n    lead_email: signal.lead_email || null,\n    company_name: signal.company_name || null,\n    company_url: signal.company_url || null,\n\n    // Signal context\n    signal_type: signal.signal_type,\n    signal_source: signal.source,\n    signal_strength: signal.signal_strength,\n    intent_score: signal.intent_score,\n    score_bonuses: signal.score_bonuses,\n    signal_summary: signal.signal_summary,\n    reach_out_reason: signal.reach_out_reason,\n\n    // AI outputs\n    research_summary: research,\n    email_subject: subject,\n    email_body: body,\n\n    // Metadata\n    generated_at: new Date().toISOString(),\n    from_name: config.from_name,\n    from_email: config.from_email,\n    calendar_link: config.calendar_link\n  }\n}];"
+        "jsCode": "// Assemble outreach packages for ALL high-intent signals\nconst signals = $('Filter High Intent').all();\nconst researchResults = $('AI: Research Lead').all();\nconst emailResults = $('AI: Write Personalized Email').all();\nconst config = $('Configuration').first().json;\n\nconst results = [];\n\nfor (let i = 0; i < signals.length; i++) {\n  const signal = signals[i].json;\n\n  // Extract research text from OpenAI Chat Completions response\n  let research = 'No research available';\n  try {\n    const rData = researchResults[i] ? researchResults[i].json : null;\n    if (rData && rData.choices && rData.choices[0]) {\n      research = rData.choices[0].message.content;\n    }\n  } catch(e) { /* fallback */ }\n\n  // Extract email text from OpenAI Chat Completions response\n  let emailContent = '';\n  try {\n    const eData = emailResults[i] ? emailResults[i].json : null;\n    if (eData && eData.choices && eData.choices[0]) {\n      emailContent = eData.choices[0].message.content;\n    }\n  } catch(e) { /* fallback */ }\n\n  emailContent = String(emailContent || '');\n\n  // Parse subject and body from AI output\n  const subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\n  const subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question about ' + (signal.company_name || 'your business');\n  const body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\n  results.push({\n    json: {\n      lead_name: signal.lead_name || signal.company_name || 'Unknown',\n      lead_email: signal.lead_email || null,\n      company_name: signal.company_name || null,\n      company_url: signal.company_url || null,\n      signal_type: signal.signal_type,\n      signal_source: signal.source,\n      signal_strength: signal.signal_strength,\n      intent_score: signal.intent_score,\n      score_bonuses: signal.score_bonuses,\n      signal_summary: signal.signal_summary,\n      reach_out_reason: signal.reach_out_reason,\n      post_url: signal.post_url || null,\n      research_summary: research,\n      email_subject: subject,\n      email_body: body,\n      generated_at: new Date().toISOString(),\n      from_name: config.from_name,\n      from_email: config.from_email,\n      calendar_link: config.calendar_link\n    }\n  });\n}\n\nreturn results.length > 0 ? results : [{json: {error: 'No signals to process'}}];"
       },
       "id": "3fc7abe2",
       "name": "Format Outreach Package",
@@ -834,8 +859,8 @@
       "webhookId": "6edb1431-d1b7-4398-8772-eb3c6398a582",
       "credentials": {
         "telegramApi": {
-          "id": "",
-          "name": "telegramApi"
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Telegram account"
         }
       },
       "continueOnFail": true
@@ -972,12 +997,59 @@
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "",
-          "name": "googleSheetsOAuth2Api"
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets account"
         }
       },
       "disabled": true,
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "sig_filter_website_signals",
+              "leftValue": "={{ $json.signal_strength }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter_website_01",
+      "name": "Filter Website Signals",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        1376,
+        672
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "merge_signals_01",
+      "name": "Merge All Signals",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1616,
+        608
+      ]
     }
   ],
   "connections": {
@@ -1054,7 +1126,7 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Merge All Signals",
             "type": "main",
             "index": 0
           }
@@ -1087,9 +1159,9 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Merge All Signals",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -1120,9 +1192,9 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Merge All Signals",
             "type": "main",
-            "index": 0
+            "index": 2
           }
         ]
       ]
@@ -1153,7 +1225,7 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Filter Website Signals",
             "type": "main",
             "index": 0
           }
@@ -1186,9 +1258,9 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Merge All Signals",
             "type": "main",
-            "index": 0
+            "index": 4
           }
         ]
       ]
@@ -1219,9 +1291,9 @@
       "main": [
         [
           {
-            "node": "Calculate Intent Score",
+            "node": "Merge All Signals",
             "type": "main",
-            "index": 0
+            "index": 5
           }
         ]
       ]
@@ -1290,10 +1362,39 @@
           }
         ]
       ]
+    },
+    "Filter Website Signals": {
+      "main": [
+        [
+          {
+            "node": "Merge All Signals",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Merge All Signals": {
+      "main": [
+        [
+          {
+            "node": "Calculate Intent Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
-    "executionOrder": "v1"
-  },
-  "pinData": {}
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "errorWorkflow": "hVkGF0pHIJurR9HH",
+    "timezone": "Asia/Kolkata"
+  }
 }
