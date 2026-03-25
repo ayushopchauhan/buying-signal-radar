@@ -45,16 +45,18 @@ The email doesn't say "I found you on a list." It says "I noticed you posted on 
 1. Download `workflow.json` from this repo
 2. In n8n, go to **Workflows > Import from File**
 3. Upload `workflow.json`
-4. Open the **Configuration** node and replace the placeholder values:
+4. **Set up n8n credentials** (the workflow uses official n8n nodes):
+   - **OpenAI credential** (`openAiApi`): Add your OpenAI API key in n8n Settings > Credentials > OpenAI API. Used by the AI Research and AI Email Writer nodes.
+   - **Telegram credential** (`telegramApi`): Add your Telegram Bot Token in n8n Settings > Credentials > Telegram API. Used by the Telegram Alert node.
+   - **Google Sheets credential** (`googleSheetsOAuth2Api`, optional): Set up OAuth2 for Google Sheets if you want logging enabled.
+5. Open the **Configuration** node and set your parameters:
 
 ```
-openai_api_key: "your-openai-key"
-telegram_bot_token: "your-bot-token"
 telegram_chat_id: "your-chat-id"
 google_places_api_key: "your-google-key"  (optional)
 ```
 
-5. Customize the signal parameters:
+6. Customize the signal parameters:
 
 ```
 industry: "your industry"
@@ -67,7 +69,7 @@ news_keywords: ["your industry news keywords"]
 score_threshold: 5.0  (adjust based on your volume preference)
 ```
 
-6. Activate the workflow. It runs every 6 hours by default.
+7. Activate the workflow. It runs every 6 hours by default.
 
 ### Optional Setup
 
@@ -76,10 +78,11 @@ score_threshold: 5.0  (adjust based on your volume preference)
 2. Update the webhook URL in the node
 3. Enable the node
 
-**Google Sheets logging:** The "Log to Google Sheets" node is disabled by default. To enable:
+**Google Sheets logging:** The "Log to Google Sheets" node is disabled by default (uses the official Google Sheets node). To enable:
 1. Create a Google Sheet with columns: Date, Signal Type, Source, Score, Lead, Company, Summary, Subject, Body, Status
-2. Replace `YOUR_SHEET_ID` and auth token in the node
-3. Enable the node
+2. Set up Google Sheets OAuth2 credentials in n8n Settings > Credentials
+3. Replace `YOUR_SHEET_ID` in the node parameters
+4. Enable the node
 
 ## How the Scoring Works
 

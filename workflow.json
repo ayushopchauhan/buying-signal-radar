@@ -2,7 +2,7 @@
   "name": "Buying Signal Radar v1.0",
   "nodes": [
     {
-      "id": "fd4c4048",
+      "id": "faabd6c5",
       "name": "Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -18,7 +18,7 @@
       }
     },
     {
-      "id": "7b8c6bce",
+      "id": "5283e89c",
       "name": "Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "db8c7a70",
+      "id": "4e5999d0",
       "name": "Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -50,7 +50,7 @@
       }
     },
     {
-      "id": "bdc4e287",
+      "id": "e2194062",
       "name": "Note3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -66,7 +66,7 @@
       }
     },
     {
-      "id": "c9b28f72",
+      "id": "a45797a7",
       "name": "Note4",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -82,7 +82,7 @@
       }
     },
     {
-      "id": "d88fcaf3",
+      "id": "5b8ee191",
       "name": "Note5",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -98,7 +98,7 @@
       }
     },
     {
-      "id": "f4c95e58",
+      "id": "9781f6ea",
       "name": "Note6",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -114,7 +114,7 @@
       }
     },
     {
-      "id": "e4c71792",
+      "id": "4aa4da60",
       "name": "Note7",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -123,30 +123,30 @@
         -200
       ],
       "parameters": {
-        "content": "## 🧠 INTENT SCORING ENGINE\n\nCombines all 6 signal branches into a unified intent score (0-10).\n\nLeads above threshold get auto-researched and contacted.\n\n**Scoring weights:**\n• Reddit Intent = 9\n• Bad Review = 8\n• Hiring Signal = 7\n• Funding/News = 7\n• Social Intent = 6\n• Website Change = 5\n\n`Threshold: 5.0 (configurable)`",
+        "content": "## 🧠 INTENT SCORING ENGINE\n\nAll 6 signal branches feed directly into the scoring engine.\n\nLeads above threshold get auto-researched and contacted.\n\n**Scoring weights:**\n• Reddit Intent = 9\n• Bad Review = 8\n• Hiring Signal = 7\n• Funding/News = 7\n• Social Intent = 6\n• Website Change = 5\n\n`Threshold: 5.0 (configurable)`",
         "height": 560,
         "width": 460,
         "color": 2
       }
     },
     {
-      "id": "2d25afdd",
+      "id": "011f50ba",
       "name": "Note8",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2540,
+        2260,
         -200
       ],
       "parameters": {
-        "content": "## 🚀 AI-POWERED OUTREACH\n\n**For every high-intent lead:**\n\n1️⃣ AI researches their company + context\n2️⃣ AI writes hyper-personalized email using the SPECIFIC signal that triggered\n3️⃣ Email sent via Gmail\n4️⃣ Telegram alert with full context\n5️⃣ Everything logged to Google Sheets\n\n`The email references WHY you're reaching out - because you saw a real signal, not because they're on a list.`",
+        "content": "## 🚀 AI-POWERED OUTREACH\n\nOfficial OpenAI, Telegram, and Google Sheets nodes.\n\n**For every high-intent lead:**\n\n1️⃣ AI researches their company + context (OpenAI node)\n2️⃣ AI writes hyper-personalized email using the SPECIFIC signal (OpenAI node)\n3️⃣ Telegram alert with full context (Telegram node)\n4️⃣ Everything logged to Google Sheets (Sheets node)\n\n`The email references WHY you're reaching out - because you saw a real signal, not because they're on a list.`",
         "height": 560,
         "width": 900,
         "color": 4
       }
     },
     {
-      "id": "d2af967c",
+      "id": "3f23f889",
       "name": "Note9",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -155,14 +155,14 @@
         -200
       ],
       "parameters": {
-        "content": "## ⏰ TRIGGER & CONFIG\n\nRuns every 6 hours.\n\nEdit the **Configuration** node to set your:\n• Industry keywords\n• Competitor names\n• Target job titles\n• Prospect URLs to monitor\n• Email/Telegram settings",
+        "content": "## ⏰ TRIGGER & CONFIG\n\nRuns every 6 hours.\n\nEdit the **Configuration** node to set your:\n• Industry keywords\n• Competitor names\n• Target job titles\n• Prospect URLs to monitor\n• Telegram chat ID\n• Google Places API key\n\nAPI keys for OpenAI, Telegram, and Google Sheets are configured via **n8n credentials** (not in the config node).",
         "height": 440,
         "width": 520,
         "color": 7
       }
     },
     {
-      "id": "60c9a450",
+      "id": "f7070748",
       "name": "Run Every 6 Hours",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -182,7 +182,7 @@
       }
     },
     {
-      "id": "ef38d537",
+      "id": "c1214eb0",
       "name": "Configuration",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -192,12 +192,12 @@
       ],
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n  \"industry\": \"web design\",\n  \"service_keywords\": [\n    \"web design\",\n    \"web development\",\n    \"website redesign\",\n    \"WordPress\",\n    \"Shopify\",\n    \"UI/UX\"\n  ],\n  \"search_queries_reddit\": [\n    \"looking for web designer\",\n    \"need a new website\",\n    \"recommend web developer\",\n    \"website redesign help\",\n    \"need help with my website\"\n  ],\n  \"competitor_place_ids\": [\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_1\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_2\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_3\"\n  ],\n  \"competitor_names\": [\n    \"Competitor Agency 1\",\n    \"Competitor Agency 2\"\n  ],\n  \"job_keywords\": [\n    \"Marketing Manager\",\n    \"Web Developer\",\n    \"Digital Marketing\",\n    \"E-commerce Manager\",\n    \"Brand Manager\"\n  ],\n  \"prospect_urls\": [\n    \"https://example-prospect-1.com\",\n    \"https://example-prospect-2.com\",\n    \"https://example-prospect-3.com\"\n  ],\n  \"news_keywords\": [\n    \"web design agency funding\",\n    \"digital agency acquisition\",\n    \"ecommerce growth\"\n  ],\n  \"social_keywords\": [\n    \"hate my website\",\n    \"website is slow\",\n    \"need new website\",\n    \"web designer recommendations\"\n  ],\n  \"score_threshold\": 5,\n  \"from_name\": \"Your Name\",\n  \"from_email\": \"you@yourdomain.com\",\n  \"calendar_link\": \"https://cal.com/you/15min\",\n  \"openai_api_key\": \"REPLACE_WITH_YOUR_OPENAI_KEY\",\n  \"google_places_api_key\": \"REPLACE_WITH_YOUR_GOOGLE_API_KEY\",\n  \"telegram_bot_token\": \"REPLACE_WITH_YOUR_BOT_TOKEN\",\n  \"telegram_chat_id\": \"REPLACE_WITH_YOUR_CHAT_ID\"\n}",
+        "jsonOutput": "{\n  \"industry\": \"web design\",\n  \"service_keywords\": [\n    \"web design\",\n    \"web development\",\n    \"website redesign\",\n    \"WordPress\",\n    \"Shopify\",\n    \"UI/UX\"\n  ],\n  \"search_queries_reddit\": [\n    \"looking for web designer\",\n    \"need a new website\",\n    \"recommend web developer\",\n    \"website redesign help\",\n    \"need help with my website\"\n  ],\n  \"competitor_place_ids\": [\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_1\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_2\",\n    \"REPLACE_WITH_GOOGLE_PLACE_ID_3\"\n  ],\n  \"competitor_names\": [\n    \"Competitor Agency 1\",\n    \"Competitor Agency 2\"\n  ],\n  \"job_keywords\": [\n    \"Marketing Manager\",\n    \"Web Developer\",\n    \"Digital Marketing\",\n    \"E-commerce Manager\",\n    \"Brand Manager\"\n  ],\n  \"prospect_urls\": [\n    \"https://example-prospect-1.com\",\n    \"https://example-prospect-2.com\",\n    \"https://example-prospect-3.com\"\n  ],\n  \"news_keywords\": [\n    \"web design agency funding\",\n    \"digital agency acquisition\",\n    \"ecommerce growth\"\n  ],\n  \"social_keywords\": [\n    \"hate my website\",\n    \"website is slow\",\n    \"need new website\",\n    \"web designer recommendations\"\n  ],\n  \"score_threshold\": 5,\n  \"from_name\": \"Your Name\",\n  \"from_email\": \"you@yourdomain.com\",\n  \"calendar_link\": \"https://cal.com/you/15min\",\n  \"google_places_api_key\": \"REPLACE_WITH_YOUR_GOOGLE_API_KEY\",\n  \"telegram_chat_id\": \"REPLACE_WITH_YOUR_CHAT_ID\"\n}",
         "options": {}
       }
     },
     {
-      "id": "1d4ebd7c",
+      "id": "89bf928e",
       "name": "Reddit Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -223,7 +223,7 @@
       "continueOnFail": true
     },
     {
-      "id": "5c6a7bdc",
+      "id": "25373b77",
       "name": "Parse Reddit Results",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -236,7 +236,7 @@
       }
     },
     {
-      "id": "1b1be865",
+      "id": "db3928cb",
       "name": "Filter Reddit Signals",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -254,7 +254,7 @@
           },
           "conditions": [
             {
-              "id": "9e96c45a",
+              "id": "d0e1b3e1",
               "leftValue": "={{ $json.no_results }}",
               "rightValue": true,
               "operator": {
@@ -269,7 +269,7 @@
       }
     },
     {
-      "id": "0e0e65bc",
+      "id": "52faf629",
       "name": "Fetch Competitor Reviews",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -287,7 +287,7 @@
       "continueOnFail": true
     },
     {
-      "id": "cc524a66",
+      "id": "3ff0b743",
       "name": "Parse Bad Reviews",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -300,7 +300,7 @@
       }
     },
     {
-      "id": "bd277f76",
+      "id": "8d755430",
       "name": "Filter Review Signals",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -318,7 +318,7 @@
           },
           "conditions": [
             {
-              "id": "40f37d92",
+              "id": "7d365700",
               "leftValue": "={{ $json.no_results }}",
               "rightValue": true,
               "operator": {
@@ -333,7 +333,7 @@
       }
     },
     {
-      "id": "8acc7112",
+      "id": "fce41e5e",
       "name": "Search Job Postings",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -359,7 +359,7 @@
       "continueOnFail": true
     },
     {
-      "id": "7282bbf8",
+      "id": "0c76180f",
       "name": "Parse Job Listings",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -372,7 +372,7 @@
       }
     },
     {
-      "id": "20755cc8",
+      "id": "97a08239",
       "name": "Filter Job Signals",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -390,7 +390,7 @@
           },
           "conditions": [
             {
-              "id": "8b0671aa",
+              "id": "f2341d1c",
               "leftValue": "={{ $json.no_results }}",
               "rightValue": true,
               "operator": {
@@ -405,7 +405,7 @@
       }
     },
     {
-      "id": "f6b761fc",
+      "id": "1710bb5a",
       "name": "Load Prospect URLs",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -418,7 +418,7 @@
       }
     },
     {
-      "id": "8216fd5b",
+      "id": "a1c09296",
       "name": "Fetch Website Content",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -442,7 +442,7 @@
       "continueOnFail": true
     },
     {
-      "id": "68511df8",
+      "id": "ffec7030",
       "name": "Detect Changes",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -455,25 +455,22 @@
       }
     },
     {
-      "id": "1848cbb1",
+      "id": "6b46d18e",
       "name": "Fetch Google News RSS",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
       "position": [
         560,
         1180
       ],
       "parameters": {
-        "method": "GET",
-        "url": "=https://news.google.com/rss/search?q={{ encodeURIComponent($json.news_keywords.join(\" OR \")) }}&hl=en-US&gl=US&ceid=US:en",
-        "options": {
-          "timeout": 15000
-        }
+        "url": "=https://news.google.com/rss/search?q={{ encodeURIComponent($json.news_keywords.join(' OR ')) }}&hl=en-US&gl=US&ceid=US:en",
+        "options": {}
       },
       "continueOnFail": true
     },
     {
-      "id": "bd77e0d2",
+      "id": "3574ef24",
       "name": "Parse News Articles",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -482,11 +479,11 @@
         1180
       ],
       "parameters": {
-        "jsCode": "// Parse Google News RSS feed for funding, acquisition, and growth signals\nconst xml = $input.first().json.data || '';\nconst config = $('Configuration').first().json;\nconst signals = [];\n\n// Simple XML parsing for RSS items\nconst itemRegex = /<item>([\\s\\S]*?)<\\/item>/gi;\nconst titleRegex = /<title><!\\[CDATA\\[([^\\]]*?)\\]\\]>|<title>([^<]*?)<\\/title>/i;\nconst linkRegex = /<link>([^<]*)<\\/link>/i;\nconst pubDateRegex = /<pubDate>([^<]*)<\\/pubDate>/i;\nconst descRegex = /<description><!\\[CDATA\\[([^\\]]*?)\\]\\]>|<description>([^<]*?)<\\/description>/i;\n\nlet match;\nwhile ((match = itemRegex.exec(xml)) !== null) {\n  const item = match[1];\n\n  const titleM = item.match(titleRegex);\n  const linkM = item.match(linkRegex);\n  const dateM = item.match(pubDateRegex);\n  const descM = item.match(descRegex);\n\n  const title = (titleM ? (titleM[1] || titleM[2]) : '').trim();\n  const link = (linkM ? linkM[1] : '').trim();\n  const pubDate = dateM ? new Date(dateM[1]) : new Date();\n  const desc = (descM ? (descM[1] || descM[2]) : '').replace(/<[^>]*>/g, '').trim();\n\n  // Skip if older than 48 hours\n  if (Date.now() - pubDate.getTime() > 48 * 3600 * 1000) continue;\n\n  // Detect signal type from content\n  const text = (title + ' ' + desc).toLowerCase();\n  let newsType = 'general';\n  if (/fund|raise|series [a-f]|seed|invest|venture|capital/i.test(text)) newsType = 'funding';\n  else if (/acqui|merge|buy|purchase/i.test(text)) newsType = 'acquisition';\n  else if (/launch|expand|grow|hire|open|new office/i.test(text)) newsType = 'expansion';\n  else if (/partner|collaborat|deal|contract/i.test(text)) newsType = 'partnership';\n\n  // Extract company name (first proper noun cluster in title)\n  const companyMatch = title.match(/^([A-Z][a-zA-Z]+(\\s+[A-Z][a-zA-Z]+)*)/);\n  const companyName = companyMatch ? companyMatch[0] : title.split(/[:\\-|]/)[0].trim();\n\n  signals.push({\n    json: {\n      signal_type: 'news_signal',\n      signal_strength: newsType === 'funding' ? 8 : 7,\n      source: 'Google News',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      news_title: title,\n      news_url: link,\n      news_type: newsType,\n      news_date: pubDate.toISOString(),\n      news_snippet: desc.substring(0, 300),\n\n      signal_summary: newsType.toUpperCase() + ': ' + title.substring(0, 100),\n      reach_out_reason: newsType === 'funding'\n        ? 'They just raised funding, meaning they have budget to invest in ' + config.industry\n        : 'Recent news suggests they are actively growing and may need ' + config.industry + ' services'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'news_signal', no_results: true } }];"
+        "jsCode": "// Parse RSS Feed Read output for funding, acquisition, and growth signals\n// RSS Read returns structured items with: title, link, pubDate, content, description\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst signals = [];\n\nfor (const item of items) {\n  const title = (item.json.title || '').trim();\n  const link = (item.json.link || '').trim();\n  const pubDate = item.json.pubDate ? new Date(item.json.pubDate) : new Date();\n  const desc = (item.json.content || item.json.description || '').replace(/<[^>]*>/g, '').trim();\n\n  // Skip if older than 48 hours\n  if (Date.now() - pubDate.getTime() > 48 * 3600 * 1000) continue;\n\n  // Skip empty items\n  if (!title) continue;\n\n  // Detect signal type from content\n  const text = (title + ' ' + desc).toLowerCase();\n  let newsType = 'general';\n  if (/fund|raise|series [a-f]|seed|invest|venture|capital/i.test(text)) newsType = 'funding';\n  else if (/acqui|merge|buy|purchase/i.test(text)) newsType = 'acquisition';\n  else if (/launch|expand|grow|hire|open|new office/i.test(text)) newsType = 'expansion';\n  else if (/partner|collaborat|deal|contract/i.test(text)) newsType = 'partnership';\n\n  // Extract company name (first proper noun cluster in title)\n  const companyMatch = title.match(/^([A-Z][a-zA-Z]+(\\s+[A-Z][a-zA-Z]+)*)/);\n  const companyName = companyMatch ? companyMatch[0] : title.split(/[:\\-|]/)[0].trim();\n\n  signals.push({\n    json: {\n      signal_type: 'news_signal',\n      signal_strength: newsType === 'funding' ? 8 : 7,\n      source: 'Google News',\n\n      lead_name: null,\n      lead_url: null,\n      company_name: companyName,\n      company_url: null,\n\n      news_title: title,\n      news_url: link,\n      news_type: newsType,\n      news_date: pubDate.toISOString(),\n      news_snippet: desc.substring(0, 300),\n\n      signal_summary: newsType.toUpperCase() + ': ' + title.substring(0, 100),\n      reach_out_reason: newsType === 'funding'\n        ? 'They just raised funding, meaning they have budget to invest in ' + config.industry\n        : 'Recent news suggests they are actively growing and may need ' + config.industry + ' services'\n    }\n  });\n}\n\nreturn signals.length > 0 ? signals : [{ json: { signal_type: 'news_signal', no_results: true } }];"
       }
     },
     {
-      "id": "c0b3cdb4",
+      "id": "7de3e9da",
       "name": "Filter News Signals",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -504,7 +501,7 @@
           },
           "conditions": [
             {
-              "id": "801869ce",
+              "id": "d9799721",
               "leftValue": "={{ $json.no_results }}",
               "rightValue": true,
               "operator": {
@@ -519,7 +516,7 @@
       }
     },
     {
-      "id": "6a08c76a",
+      "id": "2704b7c1",
       "name": "Social Media Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -545,7 +542,7 @@
       "continueOnFail": true
     },
     {
-      "id": "fcd2b688",
+      "id": "27698bae",
       "name": "Parse Social Signals",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -558,7 +555,7 @@
       }
     },
     {
-      "id": "77ae55c4",
+      "id": "7c0c7eaa",
       "name": "Filter Social Signals",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -576,7 +573,7 @@
           },
           "conditions": [
             {
-              "id": "e9cc209c",
+              "id": "92c71e52",
               "leftValue": "={{ $json.no_results }}",
               "rightValue": true,
               "operator": {
@@ -591,39 +588,25 @@
       }
     },
     {
-      "id": "89d423b7",
-      "name": "Merge All Signals",
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
+      "id": "848e66bf",
+      "name": "Calculate Intent Score",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
         1760,
         660
       ],
       "parameters": {
-        "mode": "append",
-        "options": {}
+        "jsCode": "// ============================================================\n// INTENT SCORING ENGINE\n// ============================================================\n// Combines signals from all 6 branches into a unified intent score.\n// All branch filter outputs connect directly to this node.\n// n8n waits for all connected inputs before executing.\n//\n// Each signal has a base strength (0-10) which gets modified by\n// bonus factors like urgency, budget mentions, and recency.\n//\n// Final score = base_strength + bonuses (capped at 10)\n// Leads above the threshold proceed to AI outreach.\n// ============================================================\n\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst threshold = config.score_threshold || 5.0;\nconst scored = [];\n\nfor (const item of items) {\n  const s = item.json;\n\n  // Skip empty/no-result items\n  if (s.no_results) continue;\n  if (!s.signal_type) continue;\n\n  let score = s.signal_strength || 5;\n  const bonuses = [];\n\n  // BONUS: Budget mention (+1.0)\n  if (s.has_budget_mention) {\n    score += 1.0;\n    bonuses.push('budget_mention');\n  }\n\n  // BONUS: Urgency signals (+1.5)\n  if (s.is_urgent) {\n    score += 1.5;\n    bonuses.push('urgent');\n  }\n\n  // BONUS: Multiple keyword matches (+0.5 per extra match)\n  if (s.keyword_matches && s.keyword_matches > 1) {\n    score += (s.keyword_matches - 1) * 0.5;\n    bonuses.push('multi_keyword');\n  }\n\n  // BONUS: Switching intent (+1.0)\n  if (s.intent_type === 'switching') {\n    score += 1.0;\n    bonuses.push('switching_intent');\n  }\n\n  // BONUS: Funding news (+1.5)\n  if (s.news_type === 'funding') {\n    score += 1.5;\n    bonuses.push('funding_news');\n  }\n\n  // BONUS: Very negative review (1 star) (+0.5)\n  if (s.review_rating === 1) {\n    score += 0.5;\n    bonuses.push('very_negative');\n  }\n\n  // Cap at 10\n  score = Math.min(10, Math.round(score * 10) / 10);\n\n  scored.push({\n    json: {\n      ...s,\n      intent_score: score,\n      score_bonuses: bonuses,\n      above_threshold: score >= threshold,\n      scored_at: new Date().toISOString()\n    }\n  });\n}\n\n// Sort by score descending\nscored.sort((a, b) => b.json.intent_score - a.json.intent_score);\n\nreturn scored.length > 0 ? scored : [{ json: { no_signals: true, message: 'No signals detected in this scan' } }];"
       }
     },
     {
-      "id": "fc318759",
-      "name": "Calculate Intent Score",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2060,
-        660
-      ],
-      "parameters": {
-        "jsCode": "// ============================================================\n// INTENT SCORING ENGINE\n// ============================================================\n// Combines signals from all 6 branches into a unified intent score.\n// Each signal has a base strength (0-10) which gets modified by\n// bonus factors like urgency, budget mentions, and recency.\n//\n// Final score = base_strength + bonuses (capped at 10)\n// Leads above the threshold proceed to AI outreach.\n// ============================================================\n\nconst items = $input.all();\nconst config = $('Configuration').first().json;\nconst threshold = config.score_threshold || 5.0;\nconst scored = [];\n\nfor (const item of items) {\n  const s = item.json;\n\n  // Skip empty/no-result items\n  if (s.no_results) continue;\n  if (!s.signal_type) continue;\n\n  let score = s.signal_strength || 5;\n  const bonuses = [];\n\n  // BONUS: Budget mention (+1.0)\n  if (s.has_budget_mention) {\n    score += 1.0;\n    bonuses.push('budget_mention');\n  }\n\n  // BONUS: Urgency signals (+1.5)\n  if (s.is_urgent) {\n    score += 1.5;\n    bonuses.push('urgent');\n  }\n\n  // BONUS: Multiple keyword matches (+0.5 per extra match)\n  if (s.keyword_matches && s.keyword_matches > 1) {\n    score += (s.keyword_matches - 1) * 0.5;\n    bonuses.push('multi_keyword');\n  }\n\n  // BONUS: Switching intent (+1.0)\n  if (s.intent_type === 'switching') {\n    score += 1.0;\n    bonuses.push('switching_intent');\n  }\n\n  // BONUS: Funding news (+1.5)\n  if (s.news_type === 'funding') {\n    score += 1.5;\n    bonuses.push('funding_news');\n  }\n\n  // BONUS: Very negative review (1 star) (+0.5)\n  if (s.review_rating === 1) {\n    score += 0.5;\n    bonuses.push('very_negative');\n  }\n\n  // Cap at 10\n  score = Math.min(10, Math.round(score * 10) / 10);\n\n  scored.push({\n    json: {\n      ...s,\n      intent_score: score,\n      score_bonuses: bonuses,\n      above_threshold: score >= threshold,\n      scored_at: new Date().toISOString()\n    }\n  });\n}\n\n// Sort by score descending\nscored.sort((a, b) => b.json.intent_score - a.json.intent_score);\n\nreturn scored.length > 0 ? scored : [{ json: { no_signals: true, message: 'No signals detected in this scan' } }];"
-      }
-    },
-    {
-      "id": "fff7e480",
+      "id": "02269668",
       "name": "Filter High Intent",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        2360,
+        2060,
         660
       ],
       "parameters": {
@@ -636,7 +619,7 @@
           },
           "conditions": [
             {
-              "id": "02f1686d",
+              "id": "071f230b",
               "leftValue": "={{ $json.above_threshold }}",
               "rightValue": true,
               "operator": {
@@ -651,73 +634,91 @@
       }
     },
     {
-      "id": "c8c694bf",
+      "id": "3722a3f7",
       "name": "AI: Research Lead",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
       "position": [
-        2660,
-        460
+        2360,
+        660
       ],
       "parameters": {
-        "method": "POST",
-        "url": "https://api.openai.com/v1/chat/completions",
-        "headerParameters": {
-          "parameters": [
+        "resource": "text",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
             {
-              "name": "Authorization",
-              "value": "=Bearer {{ $(\"Configuration\").first().json.openai_api_key }}"
+              "role": "system",
+              "content": "You are a sales research assistant. Given a buying signal about a potential lead, research what you can infer about them and provide: 1) What they likely need 2) Their probable pain points 3) One specific observation to reference in outreach. Keep it under 150 words. Be specific, not generic."
             },
             {
-              "name": "Content-Type",
-              "value": "application/json"
+              "content": "=Signal type: {{ $json.signal_type }}\nSignal source: {{ $json.source }}\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\nCompany: {{ $json.company_name || 'Unknown' }}\nSignal summary: {{ $json.signal_summary }}\nReason: {{ $json.reach_out_reason }}\nAdditional context: {{ $json.body || $json.review_text || $json.news_snippet || $json.title || '' }}"
             }
           ]
         },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"gpt-4o-mini\",\n  \"temperature\": 0.3,\n  \"max_tokens\": 500,\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a sales research assistant. Given a buying signal about a potential lead, research what you can infer about them and provide: 1) What they likely need 2) Their probable pain points 3) One specific observation to reference in outreach. Keep it under 150 words. Be specific, not generic.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Signal type: {{ $json.signal_type }}\\nSignal source: {{ $json.source }}\\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\\nCompany: {{ $json.company_name || 'Unknown' }}\\nSignal summary: {{ $json.signal_summary }}\\nReason: {{ $json.reach_out_reason }}\\nAdditional context: {{ $json.body || $json.review_text || $json.news_snippet || $json.title || '' }}\"\n    }\n  ]\n}",
         "options": {
-          "timeout": 30000
+          "temperature": 0.3,
+          "maxTokens": 500
+        },
+        "simplify": true
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "REPLACE_WITH_YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI account"
         }
       },
       "continueOnFail": true
     },
     {
-      "id": "c6ac6601",
+      "id": "ffc7ae9d",
       "name": "AI: Write Personalized Email",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
       "position": [
         2660,
-        860
+        660
       ],
       "parameters": {
-        "method": "POST",
-        "url": "https://api.openai.com/v1/chat/completions",
-        "headerParameters": {
-          "parameters": [
+        "resource": "text",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
             {
-              "name": "Authorization",
-              "value": "=Bearer {{ $(\"Configuration\").first().json.openai_api_key }}"
+              "role": "system",
+              "content": "You are a cold outreach expert. Write a short, personalized email (50-70 words max) that references a SPECIFIC buying signal. Rules:\n- First line references the signal (what you noticed)\n- Second line connects it to their likely need\n- Third line offers specific value\n- End with a question, not a pitch\n- No exclamation marks, no em-dashes\n- Sound like a human DM, not a sales email\n- Include subject line\n\nFormat:\nSUBJECT: [subject]\n\n[email body]"
             },
             {
-              "name": "Content-Type",
-              "value": "application/json"
+              "content": "=Write an outreach email for this lead:\n\nSignal: {{ $json.signal_summary }}\nReason for reaching out: {{ $json.reach_out_reason }}\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\nCompany: {{ $json.company_name || 'Unknown' }}\nResearch: {{ $('AI: Research Lead').first().json.output || $('AI: Research Lead').first().json.text || 'No additional research' }}\nMy service: {{ $('Configuration').first().json.industry }}\nMy calendar: {{ $('Configuration').first().json.calendar_link }}"
             }
           ]
         },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"gpt-4o-mini\",\n  \"temperature\": 0.7,\n  \"max_tokens\": 300,\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a cold outreach expert. Write a short, personalized email (50-70 words max) that references a SPECIFIC buying signal. Rules:\\n- First line references the signal (what you noticed)\\n- Second line connects it to their likely need\\n- Third line offers specific value\\n- End with a question, not a pitch\\n- No exclamation marks, no em-dashes\\n- Sound like a human DM, not a sales email\\n- Include subject line\\n\\nFormat:\\nSUBJECT: [subject]\\n\\n[email body]\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Write an outreach email for this lead:\\n\\nSignal: {{ $json.signal_summary }}\\nReason for reaching out: {{ $json.reach_out_reason }}\\nLead: {{ $json.lead_name || $json.company_name || 'Unknown' }}\\nCompany: {{ $json.company_name || 'Unknown' }}\\nResearch: {{ $('AI: Research Lead').first().json.choices[0].message.content || 'No additional research' }}\\nMy service: {{ $('Configuration').first().json.industry }}\\nMy calendar: {{ $('Configuration').first().json.calendar_link }}\"\n    }\n  ]\n}",
         "options": {
-          "timeout": 30000
+          "temperature": 0.7,
+          "maxTokens": 300
+        },
+        "simplify": true
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "REPLACE_WITH_YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI account"
         }
       },
       "continueOnFail": true
     },
     {
-      "id": "140cb88f",
+      "id": "3fc7abe2",
       "name": "Format Outreach Package",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -726,17 +727,17 @@
         660
       ],
       "parameters": {
-        "jsCode": "// Assemble the final outreach package with all context\nconst signal = $('Filter High Intent').first().json;\nconst researchResponse = $('AI: Research Lead').first().json;\nconst emailResponse = $('AI: Write Personalized Email').first().json;\nconst config = $('Configuration').first().json;\n\nconst research = researchResponse?.choices?.[0]?.message?.content || 'Research unavailable';\nconst emailContent = emailResponse?.choices?.[0]?.message?.content || 'Email generation failed';\n\n// Parse subject and body from AI output\nconst subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\nconst subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question';\nconst body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\nreturn [{\n  json: {\n    // Lead info\n    lead_name: signal.lead_name || signal.company_name || 'Unknown',\n    lead_email: signal.lead_email || null,\n    company_name: signal.company_name || null,\n    company_url: signal.company_url || null,\n\n    // Signal context\n    signal_type: signal.signal_type,\n    signal_source: signal.source,\n    signal_strength: signal.signal_strength,\n    intent_score: signal.intent_score,\n    score_bonuses: signal.score_bonuses,\n    signal_summary: signal.signal_summary,\n    reach_out_reason: signal.reach_out_reason,\n\n    // AI outputs\n    research_summary: research,\n    email_subject: subject,\n    email_body: body,\n\n    // Metadata\n    generated_at: new Date().toISOString(),\n    from_name: config.from_name,\n    from_email: config.from_email,\n    calendar_link: config.calendar_link\n  }\n}];"
+        "jsCode": "// Assemble the final outreach package with all context\n// Signal data flows through the AI nodes, so current item has signal fields\nconst signal = $input.first().json;\nconst config = $('Configuration').first().json;\n\n// OpenAI official node with simplify=true outputs to .output or .text\n// Fall back to raw API format just in case\nconst research = $('AI: Research Lead').first().json.output\n  || $('AI: Research Lead').first().json.text\n  || $('AI: Research Lead').first().json?.choices?.[0]?.message?.content\n  || 'Research unavailable';\n\nconst emailContent = $('AI: Write Personalized Email').first().json.output\n  || $('AI: Write Personalized Email').first().json.text\n  || $('AI: Write Personalized Email').first().json?.choices?.[0]?.message?.content\n  || 'Email generation failed';\n\n// Parse subject and body from AI output\nconst subjectMatch = emailContent.match(/SUBJECT:\\s*(.+?)\\n/i);\nconst subject = subjectMatch ? subjectMatch[1].trim() : 'Quick question';\nconst body = emailContent.replace(/SUBJECT:\\s*.+?\\n/i, '').trim();\n\nreturn [{\n  json: {\n    // Lead info\n    lead_name: signal.lead_name || signal.company_name || 'Unknown',\n    lead_email: signal.lead_email || null,\n    company_name: signal.company_name || null,\n    company_url: signal.company_url || null,\n\n    // Signal context\n    signal_type: signal.signal_type,\n    signal_source: signal.source,\n    signal_strength: signal.signal_strength,\n    intent_score: signal.intent_score,\n    score_bonuses: signal.score_bonuses,\n    signal_summary: signal.signal_summary,\n    reach_out_reason: signal.reach_out_reason,\n\n    // AI outputs\n    research_summary: research,\n    email_subject: subject,\n    email_body: body,\n\n    // Metadata\n    generated_at: new Date().toISOString(),\n    from_name: config.from_name,\n    from_email: config.from_email,\n    calendar_link: config.calendar_link\n  }\n}];"
       }
     },
     {
-      "id": "a3c03118",
+      "id": "ad54017e",
       "name": "Send Email via Gmail",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         3260,
-        360
+        860
       ],
       "parameters": {
         "method": "POST",
@@ -752,55 +753,165 @@
       "disabled": true
     },
     {
-      "id": "4e112519",
+      "id": "365e85b0",
       "name": "Telegram: High Intent Alert",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
       "position": [
         3260,
-        660
+        460
       ],
       "parameters": {
-        "method": "POST",
-        "url": "=https://api.telegram.org/bot{{ $(\"Configuration\").first().json.telegram_bot_token }}/sendMessage",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"chat_id\": \"{{ $('Configuration').first().json.telegram_chat_id }}\",\n  \"parse_mode\": \"HTML\",\n  \"text\": \"<b>🚨 HIGH-INTENT LEAD DETECTED</b>\\n\\n<b>Score:</b> {{ $json.intent_score }}/10 {{ $json.score_bonuses?.length > 0 ? '(+' + $json.score_bonuses.join(', +') + ')' : '' }}\\n<b>Source:</b> {{ $json.signal_source }}\\n<b>Type:</b> {{ $json.signal_type }}\\n\\n<b>Lead:</b> {{ $json.lead_name }}\\n<b>Company:</b> {{ $json.company_name || 'Unknown' }}\\n\\n<b>Signal:</b>\\n{{ $json.signal_summary }}\\n\\n<b>Why reach out:</b>\\n{{ $json.reach_out_reason }}\\n\\n<b>AI Research:</b>\\n{{ ($json.research_summary || '').substring(0, 500) }}\\n\\n<b>Draft Email:</b>\\n<i>Subject: {{ $json.email_subject }}</i>\\n{{ ($json.email_body || '').substring(0, 500) }}\\n\\n📊 Generated at {{ $json.generated_at }}\"\n}",
-        "options": {
-          "timeout": 15000
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $('Configuration').first().json.telegram_chat_id }}",
+        "text": "=🚨 HIGH-INTENT LEAD DETECTED\n\nScore: {{ $json.intent_score }}/10 {{ $json.score_bonuses?.length > 0 ? '(+' + $json.score_bonuses.join(', +') + ')' : '' }}\nSource: {{ $json.signal_source }}\nType: {{ $json.signal_type }}\n\nLead: {{ $json.lead_name }}\nCompany: {{ $json.company_name || 'Unknown' }}\n\nSignal:\n{{ $json.signal_summary }}\n\nWhy reach out:\n{{ $json.reach_out_reason }}\n\nAI Research:\n{{ ($json.research_summary || '').substring(0, 500) }}\n\nDraft Email:\nSubject: {{ $json.email_subject }}\n{{ ($json.email_body || '').substring(0, 500) }}\n\n📊 Generated at {{ $json.generated_at }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "REPLACE_WITH_YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "Telegram account"
         }
       },
       "continueOnFail": true
     },
     {
-      "id": "f501277f",
+      "id": "a27b12e9",
       "name": "Log to Google Sheets",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
       "position": [
         3260,
-        960
+        1060
       ],
       "parameters": {
-        "method": "POST",
-        "url": "https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Signals!A1:append?valueInputOption=USER_ENTERED",
-        "headerParameters": {
-          "parameters": [
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "YOUR_SHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Signals"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $json.generated_at }}",
+            "Signal Type": "={{ $json.signal_type }}",
+            "Source": "={{ $json.signal_source }}",
+            "Score": "={{ $json.intent_score }}",
+            "Lead": "={{ $json.lead_name }}",
+            "Company": "={{ $json.company_name }}",
+            "Summary": "={{ $json.signal_summary }}",
+            "Subject": "={{ $json.email_subject }}",
+            "Body": "={{ $json.email_body }}",
+            "Status": "pending"
+          },
+          "schema": [
             {
-              "name": "Authorization",
-              "value": "Bearer YOUR_GOOGLE_TOKEN"
+              "id": "Date",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Date",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
             },
             {
-              "name": "Content-Type",
-              "value": "application/json"
+              "id": "Signal Type",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Signal Type",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Source",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Source",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Score",
+              "type": "number",
+              "display": true,
+              "required": false,
+              "displayName": "Score",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lead",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Lead",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Company",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Summary",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Summary",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Subject",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Subject",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Body",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Body",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "Status",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
             }
           ]
         },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"values\": [[\n    \"{{ $json.generated_at }}\",\n    \"{{ $json.signal_type }}\",\n    \"{{ $json.signal_source }}\",\n    {{ $json.intent_score }},\n    \"{{ $json.lead_name }}\",\n    \"{{ $json.company_name || '' }}\",\n    \"{{ $json.signal_summary }}\",\n    \"{{ $json.email_subject }}\",\n    \"{{ ($json.email_body || '').substring(0, 500) }}\",\n    \"pending\"\n  ]]\n}",
-        "options": {
-          "timeout": 15000
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_GOOGLE_CREDENTIAL_ID",
+          "name": "Google Sheets account"
         }
       },
       "continueOnFail": true,
@@ -881,7 +992,7 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
+            "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
           }
@@ -914,7 +1025,7 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
+            "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
           }
@@ -947,7 +1058,7 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
+            "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
           }
@@ -980,7 +1091,7 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
+            "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
           }
@@ -1013,7 +1124,7 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
+            "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
           }
@@ -1046,17 +1157,6 @@
       "main": [
         [
           {
-            "node": "Merge All Signals",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge All Signals": {
-      "main": [
-        [
-          {
             "node": "Calculate Intent Score",
             "type": "main",
             "index": 0
@@ -1082,11 +1182,6 @@
             "node": "AI: Research Lead",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "AI: Write Personalized Email",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -1095,7 +1190,7 @@
       "main": [
         [
           {
-            "node": "Format Outreach Package",
+            "node": "AI: Write Personalized Email",
             "type": "main",
             "index": 0
           }
